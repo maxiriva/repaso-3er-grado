@@ -34,6 +34,10 @@ npm test             # Playwright, celular de 375 px
 1. Crear el repo en GitHub y subir esta carpeta a `main`.
 2. En *Settings → Pages*, elegir **GitHub Actions** como fuente.
 3. El workflow valida el banco, corre los tests y publica.
-4. Generar el QR: `npm run qr -- https://USUARIO.github.io/repaso-3er-grado/`
+4. Generar el QR: `npm run qr -- https://maxiriva.github.io/repaso-3er-grado/`
+
+Sitio publicado: https://maxiriva.github.io/repaso-3er-grado/ (QR en `qr.png` / `qr.svg`).
+
+Para probar el sitio publicado con los mismos tests: `BASE_URL=https://maxiriva.github.io/repaso-3er-grado/ npm test`
 
 El handoff original está en `docs/HANDOFF.md`.

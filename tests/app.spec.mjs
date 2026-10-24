@@ -5,12 +5,13 @@ const bank = JSON.parse(readFileSync(new URL("../banco.json", import.meta.url), 
 const ALL = bank.subjects.flatMap((s) => s.questions.map((q) => ({ ...q, sid: s.id })));
 
 /* Cada test arranca con el almacenamiento vacío y vigila consola y red. */
-test.beforeEach(async ({ page }, info) => {
+test.beforeEach(async ({ page, baseURL }, info) => {
+  const own = new URL(baseURL).hostname;
   info.consoleErrors = [];
   info.foreign = [];
   page.on("console", (m) => { if (m.type() === "error") info.consoleErrors.push(m.text()); });
   page.on("pageerror", (e) => info.consoleErrors.push(String(e)));
-  page.on("request", (r) => { const u = new URL(r.url()); if (!["localhost", "127.0.0.1"].includes(u.hostname) && u.protocol.startsWith("http")) info.foreign.push(r.url()); });
+  page.on("request", (r) => { const u = new URL(r.url()); if (u.hostname !== own && u.protocol.startsWith("http")) info.foreign.push(r.url()); });
 });
 test.afterEach(async ({ page }, info) => {
   expect(info.consoleErrors, "errores de consola").toEqual([]);
@@ -72,14 +73,14 @@ async function playRound(page, n, right = true) {
 }
 
 test("pide nombre y lo recuerda al volver", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("./");
   await newPlayer(page, "Sofi");
   await page.reload();
   await expect(page.getByRole("heading", { name: "¡Hola, Sofi!" })).toBeVisible();
 });
 
 test("partida completa en cada materia y el avance queda guardado", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("./");
   await newPlayer(page, "Tomi");
   for (const s of bank.subjects) {
     await page.locator("button.subj", { hasText: s.name }).click();
@@ -99,7 +100,7 @@ test("partida completa en cada materia y el avance queda guardado", async ({ pag
 });
 
 test("la segunda partida trae primero preguntas que todavía no vio", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("./");
   await newPlayer(page, "Ana");
   await page.locator("button.subj", { hasText: "Matemática" }).click();
   await page.locator("button.mode", { hasText: "Jugar" }).click();
@@ -110,7 +111,7 @@ test("la segunda partida trae primero preguntas que todavía no vio", async ({ p
 });
 
 test("desafío relámpago", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("./");
   await newPlayer(page, "Leo");
   await page.getByRole("button", { name: /Desafío relámpago/ }).click();
   const qs = await playRound(page, 10);
@@ -119,7 +120,7 @@ test("desafío relámpago", async ({ page }) => {
 });
 
 test("los errores quedan para repasar y se pueden corregir", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("./");
   await newPlayer(page, "Juli");
   await page.locator("button.subj", { hasText: "Science and Health" }).click();
   await page.locator("button.mode", { hasText: "Play" }).click();
@@ -135,7 +136,7 @@ test("los errores quedan para repasar y se pueden corregir", async ({ page }) =>
 });
 
 test("cada chico tiene su avance y el selector no muestra puntajes", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("./");
   await newPlayer(page, "Mati");
   await page.getByRole("button", { name: /Desafío relámpago/ }).click();
   await playRound(page, 10);
@@ -153,7 +154,7 @@ test("cada chico tiene su avance y el selector no muestra puntajes", async ({ pa
 
 test("el código de avance lleva el progreso a otro equipo", async ({ page, context }) => {
   await context.grantPermissions(["clipboard-read", "clipboard-write"]);
-  await page.goto("/");
+  await page.goto("./");
   await newPlayer(page, "Nico");
   await page.locator("button.subj", { hasText: "Guaraní" }).click();
   await page.locator("button.mode", { hasText: "Jugar" }).click();
@@ -164,7 +165,7 @@ test("el código de avance lleva el progreso a otro equipo", async ({ page, cont
   await expect(page.locator("textarea.code")).toHaveValue(/^R3[JZ]-/);
   const code = await page.locator("textarea.code").inputValue();
   await page.evaluate(() => localStorage.clear());
-  await page.goto("/");
+  await page.goto("./");
   await page.getByRole("button", { name: "Tengo un código de avance" }).click();
   await page.locator("textarea.code").fill(code);
   await page.getByRole("button", { name: "Recuperar mi avance" }).click();
@@ -175,7 +176,7 @@ test("el código de avance lleva el progreso a otro equipo", async ({ page, cont
 });
 
 test("un código roto no rompe nada", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("./");
   await page.getByRole("button", { name: "Tengo un código de avance" }).click();
   await page.locator("textarea.code").fill("R3Z-esto-no-sirve");
   await page.getByRole("button", { name: "Recuperar mi avance" }).click();
@@ -183,7 +184,7 @@ test("un código roto no rompe nada", async ({ page }) => {
 });
 
 test("tarjetas y dictado", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("./");
   await newPlayer(page, "Vale");
   await page.locator("button.subj", { hasText: "Social Studies" }).click();
   await page.locator("button.mode", { hasText: "Flashcards" }).click();
@@ -212,7 +213,7 @@ test("tarjetas y dictado", async ({ page }) => {
 });
 
 test("se migra el avance de la versión anterior", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("./");
   await page.evaluate(() => { localStorage.clear(); localStorage.setItem("repaso3-v1", JSON.stringify({ name: "Pepa", best: { mat: 2 } })); });
   await page.reload();
   await expect(page.getByRole("heading", { name: "¡Hola, Pepa!" })).toBeVisible();
@@ -220,7 +221,7 @@ test("se migra el avance de la versión anterior", async ({ page }) => {
 });
 
 test("funciona sin conexión después de la primera visita", async ({ page, context }) => {
-  await page.goto("/");
+  await page.goto("./");
   await page.evaluate(() => navigator.serviceWorker.ready);
   await page.reload();
   await newPlayer(page, "Offi");
