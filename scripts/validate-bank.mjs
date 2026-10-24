@@ -40,10 +40,6 @@ for (const s of bank.subjects || []) {
   if (count.m < 3) err(sw, `tiene ${count.m} preguntas medias (mínimo 3)`);
   if (count.d < 2) err(sw, `tiene ${count.d} desafíos (mínimo 2)`);
 }
-if (bank.subjects?.some((s) => s.dictation)) {
-  if (!bank.dictation || !Object.keys(bank.dictation).length) err("dictado", "hay una materia con dictado pero no hay listas");
-  for (const [k, v] of Object.entries(bank.dictation || {})) if (!Array.isArray(v) || v.length < 10) err(`dictado ${k}`, "necesita al menos 10 palabras");
-}
 const mixPool = (bank.subjects || []).flatMap((s) => (s.questions || []).filter((q) => !q.p));
 for (const [lv, n] of [["f", 4], ["m", 3], ["d", 3]]) if (mixPool.filter((q) => q.lv === lv).length < n) err("relámpago", `faltan preguntas nivel ${lv} sin texto de lectura`);
 

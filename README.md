@@ -1,6 +1,6 @@
 # Repaso 3er grado
 
-Juego de repaso para 3er grado: Comunicación, Guaraní, Matemática, Vida Social y Trabajo, Language Arts, Science and Health y Social Studies. Tiene partidas de 8 preguntas, desafío relámpago, tarjetas y dictado.
+Juego de repaso para 3er grado: Comunicación, Guaraní, Matemática, Vida Social y Trabajo, Language Arts, Science and Health y Social Studies. Tiene partidas de 8 preguntas, desafío relámpago, y tarjetas.
 
 La guía para padres está en [`padres.html`](padres.html) (también se abre desde el sitio).
 
@@ -10,7 +10,7 @@ La guía para padres está en [`padres.html`](padres.html) (también se abre des
 - Todo queda en el navegador de ese equipo (`localStorage`, clave `repaso3-v2`). No hay servidor, cuentas, analytics ni cookies.
 - Por pregunta se guarda: intentos, aciertos y si la última vez salió bien. "Dominada" = la última vez salió bien.
 - Las partidas traen primero las preguntas nunca vistas, después las erradas. "Repasar mis errores" juega solo las erradas.
-- Hay misión del día, racha de días, 14 medallas y un informe por chico que se puede imprimir.
+- Hay misión del día, racha de días, 13 medallas y un informe por chico que se puede imprimir.
 - **Código de avance:** el chico lo copia y lo pega en otro equipo. Solo viaja si una persona lo manda.
 - El selector "¿Quién juega?" muestra nombres y dibujitos, nunca puntajes.
 

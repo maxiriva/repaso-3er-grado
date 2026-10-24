@@ -29,7 +29,6 @@ const MEDALS = [
   {id:"mitad",    icon:"🌗", name:"Mitad del camino",   how:"Dominá la mitad de una materia."},
   {id:"maestro",  icon:"🏆", name:"Maestro",            how:"Dominá todas las preguntas de una materia."},
   {id:"relampago",icon:"⚡", name:"Rayo",               how:"Sacá 3 estrellas en el desafío relámpago."},
-  {id:"dictado",  icon:"✏️", name:"Buena letra",        how:"Sacá 3 estrellas en un dictado."},
   {id:"bilingue", icon:"🌎", name:"Bilingüe",           how:"3 estrellas en una materia en inglés y en una en español."},
   {id:"dias3",    icon:"📅", name:"Tres días seguidos", how:"Jugá 3 días seguidos."},
   {id:"dias7",    icon:"🗓️", name:"Semana completa",    how:"Jugá 7 días seguidos."}
@@ -96,7 +95,6 @@ function checkMedals(p, ctx){
   if(S.some(s=>mastery(p,s).pct>=0.5)) award(p,"mitad");
   if(S.some(s=>mastery(p,s).pct>=1)) award(p,"maestro");
   if((p.best.mix||0)>=3) award(p,"relampago");
-  if((p.best.dict||0)>=3) award(p,"dictado");
   if(S.some(s=>s.lang==="en"&&(p.best[s.id]||0)>=3) && S.some(s=>s.lang==="es"&&(p.best[s.id]||0)>=3)) award(p,"bilingue");
   const ds = dayStreak(p); if(ds>=3) award(p,"dias3"); if(ds>=7) award(p,"dias7");
   save();
@@ -154,7 +152,7 @@ function go(view, extra){ st = Object.assign({view}, extra||{}); render(); windo
 function render(){
   app.innerHTML = ""; app.style.removeProperty("--sc");
   if(!me() && !["who","newp","import"].includes(st.view)) return db.profiles.length ? renderWho() : renderNew();
-  ({who:renderWho, newp:renderNew, import:renderImport, subject:renderSubject, quiz:renderQuiz, cards:renderCards, dict:renderDict, medals:renderMedals, report:renderReport, share:renderShare}[st.view] || renderHome)();
+  ({who:renderWho, newp:renderNew, import:renderImport, subject:renderSubject, quiz:renderQuiz, cards:renderCards, medals:renderMedals, report:renderReport, share:renderShare}[st.view] || renderHome)();
 }
 function topBar(label, fn){
   const p = me();
@@ -236,7 +234,6 @@ function renderSubject(){
   const seen = (p.cards[s.id]||[]).length;
   const c = $(`<button class="mode"><strong>${T.cards}</strong><small>${T.cardsSub}</small><small>${seen}/${s.cards.length} ${T.cardsN}</small></button>`); c.onclick=()=>go("cards",{sid:s.id,i:0,flip:false,order:shuffle(s.cards.map((_,i)=>i))});
   m.append(c);
-  if(s.dictation){ const d=$(`<button class="mode"><strong>Dictado</strong><small>Escuchá la palabra y escribila.</small>${starsHtml(p.best.dict||0)}</button>`); d.onclick=()=>go("dict",{sid:s.id}); m.append(d); }
   app.append(m);
 }
 
@@ -380,48 +377,11 @@ function renderCards(){
   app.append(c);
 }
 
-function speak(w){ try{ if(!("speechSynthesis" in window)) return; const u=new SpeechSynthesisUtterance(w); const v=speechSynthesis.getVoices().find(v=>/^es/i.test(v.lang)); u.lang=v?v.lang:"es-ES"; if(v) u.voice=v; u.rate=0.75; speechSynthesis.cancel(); speechSynthesis.speak(u);}catch(e){} }
-try{ if("speechSynthesis" in window) speechSynthesis.getVoices(); }catch(e){}
-
-function renderDict(){
-  const p = me(), s = subj("com"), T = TXT.es, D = BANK.dictation;
-  app.style.setProperty("--sc", COLORS[s.color]);
-  app.append(topBar("Comunicación", ()=>go("subject",{sid:"com"})));
-  if(!st.list){
-    const c=$(`<section class="card"><span class="label">Ortografía</span><h2>Dictado</h2><p>Elegí qué letras practicar. Vas a escuchar 10 palabras.</p><div class="dchips"></div><p class="note">Si el audio no suena, un adulto puede tocar “Ver la palabra” y dictarla.</p></section>`);
-    [...Object.keys(D),"Mezcla"].forEach(k=>{ const b=$(`<button class="dchip">${k==="Mezcla"?"Mezcla":"Con "+k}</button>`);
-      b.onclick=()=>{ st.list = k==="Mezcla"?shuffle(Object.values(D).flat()).slice(0,10):shuffle(D[k]); st.k=k; st.i=0; st.score=0; st.newMedals=[]; render(); };
-      c.querySelector(".dchips").append(b); });
-    app.append(c); return;
-  }
-  const w = st.list;
-  if(st.i>=w.length){
-    const pct=st.score/w.length, stars=pct>=0.9?3:pct>=0.7?2:1;
-    if(!st.closed){ st.closed=true; if(stars>(p.best.dict||0)) p.best.dict=stars; markDay(p); checkMedals(p,{finished:true}); save(); if(stars===3||st.newMedals.length) confetti(); stars===3 ? sfx.win() : st.newMedals.length && sfx.medal(); }
-    const c=$(`<section class="card end"><div class="bigstars">${[0,1,2].map(i=>i<stars?"<b>★</b>":"★").join("")}</div><h2>${st.score} / ${w.length}</h2><p>${stars===3?T.end3:stars===2?T.end2:"¡Buen comienzo! Probá otra vez."}</p>${medalsHtml(st.newMedals)}<div class="actions"></div></section>`);
-    const a=$(`<button class="primary">Otro dictado</button>`); a.onclick=()=>go("dict",{sid:"com"}); c.querySelector(".actions").append(a); app.append(c); return;
-  }
-  const word = w[st.i];
-  app.append($(`<div class="qhead"><div class="qmeta"><span>Dictado · ${st.k==="Mezcla"?"Mezcla":"Con "+st.k}</span><span>Palabra ${st.i+1} de ${w.length}</span></div><div class="prog"><div style="width:${(st.i/w.length)*100}%"></div></div></div>`));
-  const c=$(`<section class="card"></section>`);
-  const sp=$(`<button class="speak">▶ Escuchar la palabra</button>`); sp.onclick=()=>speak(word);
-  const rv=$(`<button class="reveal">Ver la palabra (para el adulto que dicta)</button>`), shown=$(`<p class="word" hidden>${esc(word)}</p>`); rv.onclick=()=>{ shown.hidden=!shown.hidden; };
-  const inp=$(`<input class="fill" id="dict-${st.i}" aria-label="Escribí la palabra" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Escribí la palabra">`);
-  const fb=$(`<div></div>`), act=$(`<div class="actions"></div>`), chk=$(`<button class="primary">Comprobar</button>`); let done=false;
-  const run=()=>{ if(done||!inp.value.trim()) return; done=true; const v=inp.value.trim().toLowerCase(); let cls,txt;
-    if(v===word){ st.score++; cls="ok"; txt=pick(T.ok); sfx.ok(); } else if(deacc(v)===deacc(word)){ st.score+=0.5; cls="bad"; txt=`¡Casi! Revisá la tilde: <strong>${esc(word)}</strong>`; sfx.bad(); } else { cls="bad"; txt=`${pick(T.bad)} <span class="ans">Se escribe: <strong>${esc(word)}</strong></span>`; sfx.bad(); }
-    inp.disabled=true; inp.style.borderColor=cls==="ok"?"var(--ok)":"var(--bad)";
-    fb.replaceChildren($(`<div class="fb ${cls} pop" role="status">${txt}</div>`));
-    const nx=$(`<button class="primary">${st.i+1>=w.length?"Ver resultado":"Siguiente palabra"}</button>`); nx.onclick=()=>{ st.i++; render(); }; act.replaceChildren(nx); nx.focus(); };
-  chk.onclick=run; inp.onkeydown=(e)=>{ if(e.key==="Enter") run(); }; act.append(chk);
-  c.append(sp,rv,shown,inp,fb,act); app.append(c); setTimeout(()=>inp.focus(),50);
-}
-
 /* ---------- Medallas ---------- */
 function renderMedals(){
   const p = me();
   app.append(topBar("Inicio", ()=>go("home")));
-  app.append($(`<header class="hero"><h1>Mis medallas</h1><p>Tenés ${Object.keys(p.medals).length} de ${MEDALS.length}. Las grises todavía te esperan.</p></header>`));
+  app.append($(`<header class="hero"><h1>Mis medallas</h1><p>Tenés ${MEDALS.filter(M=>p.medals[M.id]).length} de ${MEDALS.length}. Las grises todavía te esperan.</p></header>`));
   const g = $(`<section class="medal-grid"></section>`);
   MEDALS.forEach(M=>{ const got = p.medals[M.id];
     g.append($(`<div class="medal ${got?"got":"locked"}"><span class="micon" aria-hidden="true">${got?M.icon:"🔒"}</span><strong>${esc(M.name)}</strong><span>${esc(M.how)}</span></div>`)); });
@@ -434,7 +394,7 @@ function renderReport(){
   app.append(topBar("Inicio", ()=>go("home")));
   const total = S.reduce((a,s)=>a+mastery(p,s).ok,0), tot = S.reduce((a,s)=>a+s.questions.length,0);
   const c = $(`<section class="card report"><span class="label">Informe de avance · ${new Date().toLocaleDateString("es-PY")}</span><h1><span aria-hidden="true">${p.avatar}</span> ${esc(p.name)}</h1>
-    <p>Domina <strong>${total} de ${tot}</strong> preguntas · jugó <strong>${p.days.length}</strong> ${p.days.length===1?"día":"días"} · <strong>${Object.keys(p.medals).length}</strong> medallas.</p>
+    <p>Domina <strong>${total} de ${tot}</strong> preguntas · jugó <strong>${p.days.length}</strong> ${p.days.length===1?"día":"días"} · <strong>${MEDALS.filter(M=>p.medals[M.id]).length}</strong> medallas.</p>
     <div class="rows"></div><p class="note">“Dominada” = la última vez que le tocó, la respondió bien. Este informe se arma solo con lo que hay en este equipo.</p>
     <div class="actions"><button class="ghost" id="pr">🖨️ Imprimir o guardar PDF</button></div></section>`);
   const rows = c.querySelector(".rows");

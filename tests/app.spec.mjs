@@ -146,10 +146,10 @@ test("cada chico tiene su avance y el selector no muestra puntajes", async ({ pa
   await expect(page.locator(".who-grid")).not.toContainText(/★|\d+\s*\//);
   await page.getByRole("button", { name: /Soy nuevo/ }).click();
   await newPlayer(page, "Caro");
-  await expect(page.getByRole("button", { name: /0 de 14 medallas/ })).toBeVisible();
+  await expect(page.getByRole("button", { name: /0 de 13 medallas/ })).toBeVisible();
   await page.getByRole("button", { name: "Cambiar de jugador" }).click();
   await page.locator(".who-btn", { hasText: "Mati" }).click();
-  await expect(page.getByRole("button", { name: /medallas/ })).not.toContainText("0 de 14");
+  await expect(page.getByRole("button", { name: /medallas/ })).not.toContainText("0 de 13");
 });
 
 test("el código de avance lleva el progreso a otro equipo", async ({ page, context }) => {
@@ -183,7 +183,7 @@ test("un código roto no rompe nada", async ({ page }) => {
   await expect(page.locator(".fb.bad")).toContainText("no funciona");
 });
 
-test("tarjetas y dictado", async ({ page }) => {
+test("tarjetas (y ya no hay dictado)", async ({ page }) => {
   await page.goto("./");
   await newPlayer(page, "Vale");
   await page.locator("button.subj", { hasText: "Social Studies" }).click();
@@ -199,17 +199,8 @@ test("tarjetas y dictado", async ({ page }) => {
   await expect(page.locator("button.mode", { hasText: "Flashcards" })).toContainText(`${n}/${n}`);
   await page.locator("button.back").click();
   await page.locator("button.subj", { hasText: "Comunicación" }).click();
-  await page.locator("button.mode", { hasText: "Dictado" }).click();
-  await page.getByRole("button", { name: "Con LL" }).click();
-  for (let i = 0; i < 10; i++) {
-    await page.getByRole("button", { name: /Ver la palabra/ }).click();
-    const w = await page.locator("p.word").innerText();
-    await page.locator("input.fill").fill(w);
-    await page.getByRole("button", { name: "Comprobar" }).click();
-    await page.getByRole("button", { name: /Siguiente palabra|Ver resultado/ }).click();
-  }
-  await expect(page.locator(".card.end h2")).toHaveText("10 / 10");
-  await expect(page.locator(".medal.got", { hasText: "Buena letra" })).toBeVisible();
+  await expect(page.locator("button.mode")).toHaveCount(2);
+  await expect(page.locator("button.mode", { hasText: "Dictado" })).toHaveCount(0);
 });
 
 test("se migra el avance de la versión anterior", async ({ page }) => {

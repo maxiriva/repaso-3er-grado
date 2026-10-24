@@ -102,11 +102,6 @@ select.ok{border-color:var(--ok)} select.bad{border-color:var(--bad)}
 .fcard .front{font-family:var(--f-display);font-size:1.8rem}
 .fcard .backside{font-size:1.15rem}
 .fcard small{color:var(--ink-soft)}
-.dchips{display:flex;flex-wrap:wrap;gap:8px}
-.dchip{border:2px solid var(--line);background:var(--card);border-radius:999px;padding:6px 16px;font-family:var(--f-display);font-weight:700}
-.speak{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--sc);color:var(--on-sc);border:none;border-radius:16px;padding:18px;font-family:var(--f-display);font-size:1.3rem}
-.reveal{font-size:.88rem;color:var(--ink-soft);background:none;border:none;text-decoration:underline;padding:0;align-self:flex-start}
-.word{font-family:var(--f-display);font-size:1.6rem}
 .note{font-size:.88rem;color:var(--ink-soft)}
 .foot{font-size:.82rem;color:var(--ink-soft);text-align:center}
 @media (max-width:480px){h1{font-size:1.65rem}.mrow{grid-template-columns:1fr}}

@@ -8,7 +8,6 @@
    "tag": "Español",
    "lang": "es",
    "color": "com",
-   "dictation": true,
    "passages": {
     "c1": {
      "title": "La tortuga Lola",
@@ -1880,67 +1879,5 @@
     }
    ]
   }
- ],
- "dictation": {
-  "G": [
-   "gota",
-   "goma",
-   "gusto",
-   "guerra",
-   "guiso",
-   "gemelo",
-   "gimnasia",
-   "origen",
-   "girar",
-   "página"
-  ],
-  "J": [
-   "jardín",
-   "juego",
-   "jamón",
-   "jefe",
-   "ajo",
-   "pasaje",
-   "mensaje",
-   "mujer",
-   "ojera",
-   "dibujo"
-  ],
-  "H": [
-   "hada",
-   "hilo",
-   "horno",
-   "hueso",
-   "hierba",
-   "humo",
-   "hamaca",
-   "almohada",
-   "hijo",
-   "ahí"
-  ],
-  "LL": [
-   "llama",
-   "lleno",
-   "pollito",
-   "cuchillo",
-   "sello",
-   "anillo",
-   "pasillo",
-   "castillo",
-   "brillo",
-   "llorar"
-  ],
-  "Y": [
-   "yate",
-   "yogur",
-   "yegua",
-   "joya",
-   "muy",
-   "ley",
-   "voy",
-   "soy",
-   "buey",
-   "yeso"
-  ]
- }
+ ]
 }
