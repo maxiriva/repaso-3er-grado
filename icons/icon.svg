@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#2B64C8"/>
+  <g transform="translate(56 120) scale(3.3)">
+    <ellipse cx="60" cy="82" rx="40" ry="5" fill="#1F4E9E"/>
+    <g fill="#7FB36A"><rect x="30" y="62" width="12" height="16" rx="6"/><rect x="74" y="62" width="12" height="16" rx="6"/></g>
+    <circle cx="98" cy="48" r="14" fill="#8CC276"/><circle cx="103" cy="44" r="3.2" fill="#1B2539"/><circle cx="104" cy="43" r="1" fill="#fff"/>
+    <path d="M96 54 q6 5 12 0" stroke="#1B2539" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M18 66 Q20 22 58 20 Q96 22 98 66 Z" fill="#23864F" stroke="#165C36" stroke-width="3"/>
+    <g fill="#F0AE1C"><polygon points="58,30 68,36 68,48 58,54 48,48 48,36"/><polygon points="34,44 42,49 42,59 34,63 27,58 27,49"/><polygon points="82,44 89,49 89,58 82,63 74,59 74,49"/></g>
+    <rect x="14" y="62" width="88" height="8" rx="4" fill="#165C36"/>
+  </g>
+  <text x="256" y="118" text-anchor="middle" font-family="Trebuchet MS, Arial, sans-serif" font-weight="700" font-size="92" fill="#fff">3°</text>
+</svg>

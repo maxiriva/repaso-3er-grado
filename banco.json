@@ -1,0 +1,1946 @@
+{
+ "version": "2026-10-24",
+ "grade": "3er grado",
+ "subjects": [
+  {
+   "id": "com",
+   "name": "Comunicación",
+   "tag": "Español",
+   "lang": "es",
+   "color": "com",
+   "dictation": true,
+   "passages": {
+    "c1": {
+     "title": "La tortuga Lola",
+     "text": "En el patio de la escuela vive Lola, una tortuga muy tranquila. Todas las mañanas, Lola sale de su casita de madera. Primero, come hojas de lechuga. Después, camina despacio por el pasto. El viento le susurra canciones al oído. Su caparazón brilla como una piedra mojada. Un día, Lola se escondió debajo de un banco y nadie la encontraba. Los chicos la buscaron, la buscaron y la buscaron. Al final, Martina la encontró dormida. ¡Qué susto y qué alegría!"
+    }
+   },
+   "cards": [
+    [
+     "Sustantivo",
+     "Nombra personas, animales, cosas o lugares: tortuga, Martina."
+    ],
+    [
+     "Adjetivo",
+     "Dice cómo es algo: tranquila, mojada."
+    ],
+    [
+     "Verbo",
+     "Dice una acción: come, camina, buscaron."
+    ],
+    [
+     "Artículo",
+     "Va antes del sustantivo: el, la, los, las, un, una, unos, unas."
+    ],
+    [
+     "Pronombre",
+     "Reemplaza al nombre: yo, tú/vos, él, ella, nosotros, ustedes, ellos."
+    ],
+    [
+     "Infinitivo",
+     "El nombre del verbo, termina en -ar, -er, -ir: caminar, comer, dormir."
+    ],
+    [
+     "Comparación",
+     "Compara usando “como”: brilla como una piedra mojada."
+    ],
+    [
+     "Personificación",
+     "Una cosa hace algo de personas: el viento le susurra canciones."
+    ],
+    [
+     "Repetición",
+     "Repite una palabra para dar fuerza: la buscaron, la buscaron y la buscaron."
+    ]
+   ],
+   "questions": [
+    {
+     "id": "com-01",
+     "lv": "f",
+     "t": "mc",
+     "p": "c1",
+     "q": "¿Quién es el personaje principal?",
+     "a": "Lola, la tortuga",
+     "o": [
+      "Lola, la tortuga",
+      "Martina",
+      "Un perro"
+     ]
+    },
+    {
+     "id": "com-02",
+     "lv": "f",
+     "t": "mc",
+     "p": "c1",
+     "q": "¿Dónde vive Lola?",
+     "a": "En el patio de la escuela",
+     "o": [
+      "En el patio de la escuela",
+      "En un río",
+      "En la casa de Martina"
+     ]
+    },
+    {
+     "id": "com-03",
+     "lv": "f",
+     "t": "tf",
+     "p": "c1",
+     "q": "Lola come hojas de lechuga.",
+     "a": true
+    },
+    {
+     "id": "com-04",
+     "lv": "f",
+     "t": "mc",
+     "q": "¿Qué clase de palabra es “tortuga”?",
+     "a": "Sustantivo",
+     "o": [
+      "Sustantivo",
+      "Verbo",
+      "Adjetivo"
+     ]
+    },
+    {
+     "id": "com-05",
+     "lv": "f",
+     "t": "mc",
+     "q": "En “una tortuga”, la palabra “una” es un…",
+     "a": "Artículo",
+     "o": [
+      "Artículo",
+      "Verbo",
+      "Pronombre"
+     ]
+    },
+    {
+     "id": "com-06",
+     "lv": "f",
+     "t": "mc",
+     "q": "¿Cuál es un sustantivo propio?",
+     "a": "Martina",
+     "o": [
+      "Martina",
+      "banco",
+      "pasto"
+     ]
+    },
+    {
+     "id": "com-07",
+     "lv": "f",
+     "t": "mc",
+     "q": "¿Cómo se escribe?",
+     "a": "girasol",
+     "o": [
+      "girasol",
+      "jirasol"
+     ]
+    },
+    {
+     "id": "com-08",
+     "lv": "m",
+     "t": "order",
+     "p": "c1",
+     "q": "Ordená lo que hace Lola.",
+     "items": [
+      "Sale de su casita de madera.",
+      "Come hojas de lechuga.",
+      "Camina despacio por el pasto.",
+      "Se esconde debajo de un banco."
+     ]
+    },
+    {
+     "id": "com-09",
+     "lv": "m",
+     "t": "mc",
+     "p": "c1",
+     "q": "“Su caparazón brilla como una piedra mojada” es una…",
+     "a": "Comparación",
+     "o": [
+      "Comparación",
+      "Repetición",
+      "Personificación"
+     ]
+    },
+    {
+     "id": "com-10",
+     "lv": "m",
+     "t": "mc",
+     "p": "c1",
+     "q": "“El viento le susurra canciones al oído” es una…",
+     "a": "Personificación",
+     "o": [
+      "Personificación",
+      "Comparación",
+      "Repetición"
+     ]
+    },
+    {
+     "id": "com-11",
+     "lv": "m",
+     "t": "mc",
+     "p": "c1",
+     "q": "“La buscaron, la buscaron y la buscaron” es una…",
+     "a": "Repetición",
+     "o": [
+      "Repetición",
+      "Comparación",
+      "Personificación"
+     ]
+    },
+    {
+     "id": "com-12",
+     "lv": "m",
+     "t": "fill",
+     "q": "Escribí el infinitivo de “encontró”.",
+     "a": [
+      "encontrar"
+     ]
+    },
+    {
+     "id": "com-13",
+     "lv": "m",
+     "t": "mc",
+     "q": "¿Qué pronombre reemplaza a “Martina”?",
+     "a": "ella",
+     "o": [
+      "ella",
+      "él",
+      "ellos"
+     ]
+    },
+    {
+     "id": "com-14",
+     "lv": "m",
+     "t": "mc",
+     "q": "En “una tortuga muy tranquila”, ¿cuál es el adjetivo?",
+     "a": "tranquila",
+     "o": [
+      "tranquila",
+      "tortuga",
+      "una"
+     ]
+    },
+    {
+     "id": "com-15",
+     "lv": "m",
+     "t": "mc",
+     "q": "¿Cómo se escribe?",
+     "a": "hormiga",
+     "o": [
+      "hormiga",
+      "ormiga"
+     ]
+    },
+    {
+     "id": "com-16",
+     "lv": "d",
+     "t": "mc",
+     "p": "c1",
+     "q": "El verbo “camina” está en…",
+     "a": "Presente",
+     "o": [
+      "Presente",
+      "Pasado",
+      "Futuro"
+     ]
+    },
+    {
+     "id": "com-17",
+     "lv": "d",
+     "t": "fill",
+     "q": "Pasalo a futuro: Hoy Lola come lechuga. Mañana Lola ______ lechuga.",
+     "a": [
+      "comerá",
+      "va a comer"
+     ]
+    },
+    {
+     "id": "com-18",
+     "lv": "d",
+     "t": "mc",
+     "p": "c1",
+     "q": "¿Cuál fue el problema de la historia?",
+     "a": "Lola se escondió y nadie la encontraba.",
+     "o": [
+      "Lola se escondió y nadie la encontraba.",
+      "Lola no quería comer.",
+      "Llovió mucho en el patio."
+     ]
+    },
+    {
+     "id": "com-19",
+     "lv": "d",
+     "t": "mc",
+     "q": "¿Qué oración tiene personificación?",
+     "a": "La luna me guiña un ojo.",
+     "o": [
+      "La luna me guiña un ojo.",
+      "La luna es redonda.",
+      "Miro la luna desde mi cama."
+     ]
+    },
+    {
+     "id": "com-20",
+     "lv": "d",
+     "t": "mc",
+     "q": "¿Cómo se escribe?",
+     "a": "garaje",
+     "o": [
+      "garaje",
+      "garage"
+     ]
+    },
+    {
+     "id": "com-21",
+     "lv": "d",
+     "t": "mc",
+     "q": "¿Cómo se escribe?",
+     "a": "payaso",
+     "o": [
+      "payaso",
+      "pallaso"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gua",
+   "name": "Guaraní",
+   "tag": "Guaraní",
+   "lang": "es",
+   "color": "gua",
+   "passages": {
+    "g1": {
+     "title": "Mbarakaja Mimi",
+     "text": "Mimi ha'e peteĩ mbarakaja hũ. Mimi hũ pyharéicha. Ha'e oiko Ana rógape. Pyhareve, Mimi okaru ha upéi oke apyka ári. Ka'aru, Ana ha Mimi oñembosarái korapýpe. Pyhare, jasy omaña ovetã rupi ha Mimi ohecha. Mimi ovy'a.",
+     "gloss": "mbarakaja = gato · rógape = en la casa (de) · upéi = después · apyka = silla · oñembosarái = juegan · korapy = patio · jasy = luna · omaña = mira · ovetã = ventana · ohecha = ve · ovy'a = está feliz"
+    }
+   },
+   "cards": [
+    [
+     "che",
+     "yo"
+    ],
+    [
+     "nde",
+     "tú / vos"
+    ],
+    [
+     "ha'e",
+     "él / ella"
+    ],
+    [
+     "ñande",
+     "nosotros (con el que escucha)"
+    ],
+    [
+     "ore",
+     "nosotros (sin el que escucha)"
+    ],
+    [
+     "peẽ",
+     "ustedes"
+    ],
+    [
+     "ha'ekuéra",
+     "ellos / ellas"
+    ],
+    [
+     "ko · pe · amo",
+     "este · ese · aquel"
+    ],
+    [
+     "ko'ã · umi",
+     "estos · esos / aquellos"
+    ],
+    [
+     "-icha",
+     "como (comparación): pyharéicha = como la noche"
+    ],
+    [
+     "añete · japu",
+     "verdadero · falso"
+    ]
+   ],
+   "questions": [
+    {
+     "id": "gua-01",
+     "lv": "f",
+     "t": "mc",
+     "p": "g1",
+     "q": "Mba'éichapa héra ko moñe'ẽrã? (¿Cuál es el título?)",
+     "a": "Mbarakaja Mimi",
+     "o": [
+      "Mbarakaja Mimi",
+      "Juli ha ijagua",
+      "Ára ama"
+     ]
+    },
+    {
+     "id": "gua-02",
+     "lv": "f",
+     "t": "mc",
+     "p": "g1",
+     "q": "Mba'épa Mimi? (¿Qué es Mimi?)",
+     "a": "Peteĩ mbarakaja (un gato)",
+     "o": [
+      "Peteĩ mbarakaja (un gato)",
+      "Peteĩ jagua (un perro)",
+      "Peteĩ guyra (un pájaro)"
+     ]
+    },
+    {
+     "id": "gua-03",
+     "lv": "f",
+     "t": "match",
+     "q": "Uní cada palabra con su significado.",
+     "pairs": [
+      [
+       "jasy",
+       "luna"
+      ],
+      [
+       "apyka",
+       "silla"
+      ],
+      [
+       "korapy",
+       "patio"
+      ],
+      [
+       "mbarakaja",
+       "gato"
+      ]
+     ]
+    },
+    {
+     "id": "gua-04",
+     "lv": "f",
+     "t": "match",
+     "q": "Uní cada pronombre con su significado.",
+     "pairs": [
+      [
+       "ñande",
+       "nosotros (con el que escucha)"
+      ],
+      [
+       "ore",
+       "nosotros (sin el que escucha)"
+      ],
+      [
+       "ha'ekuéra",
+       "ellos / ellas"
+      ],
+      [
+       "ha'e",
+       "él / ella"
+      ]
+     ]
+    },
+    {
+     "id": "gua-05",
+     "lv": "f",
+     "t": "mc",
+     "p": "g1",
+     "q": "Mba'e sa'ýpa Mimi? (¿De qué color es Mimi?)",
+     "a": "hũ (negro)",
+     "o": [
+      "hũ (negro)",
+      "morotĩ (blanco)",
+      "sa'yju (amarillo)"
+     ]
+    },
+    {
+     "id": "gua-06",
+     "lv": "m",
+     "t": "tf",
+     "p": "g1",
+     "q": "Mimi oke apyka ári.",
+     "a": true,
+     "labels": [
+      "Añete",
+      "Japu"
+     ]
+    },
+    {
+     "id": "gua-07",
+     "lv": "m",
+     "t": "tf",
+     "p": "g1",
+     "q": "Mimi oiko Pedro rógape.",
+     "a": false,
+     "labels": [
+      "Añete",
+      "Japu"
+     ]
+    },
+    {
+     "id": "gua-08",
+     "lv": "m",
+     "t": "order",
+     "p": "g1",
+     "q": "Ordená lo que pasa en el texto.",
+     "items": [
+      "Mimi okaru.",
+      "Mimi oke apyka ári.",
+      "Ana ha Mimi oñembosarái korapýpe.",
+      "Jasy omaña ovetã rupi."
+     ]
+    },
+    {
+     "id": "gua-09",
+     "lv": "m",
+     "t": "mc",
+     "q": "¿Cómo se dice “aquel gato”?",
+     "a": "amo mbarakaja",
+     "o": [
+      "amo mbarakaja",
+      "ko mbarakaja",
+      "mbarakaja amo"
+     ]
+    },
+    {
+     "id": "gua-10",
+     "lv": "m",
+     "t": "mc",
+     "q": "¿Cómo se dice “gato blanco”?",
+     "a": "mbarakaja morotĩ",
+     "o": [
+      "mbarakaja morotĩ",
+      "morotĩ mbarakaja",
+      "mbarakaja hũ"
+     ]
+    },
+    {
+     "id": "gua-11",
+     "lv": "m",
+     "t": "mc",
+     "q": "Nde ______ (karu: comer)",
+     "a": "rekaru",
+     "o": [
+      "rekaru",
+      "akaru",
+      "okaru"
+     ]
+    },
+    {
+     "id": "gua-12",
+     "lv": "m",
+     "t": "mc",
+     "q": "¿Cómo se dice “estas casas”?",
+     "a": "ko'ã óga",
+     "o": [
+      "ko'ã óga",
+      "umi óga",
+      "ko óga"
+     ]
+    },
+    {
+     "id": "gua-13",
+     "lv": "d",
+     "t": "mc",
+     "p": "g1",
+     "q": "¿Qué oración tiene una comparación?",
+     "a": "Mimi hũ pyharéicha.",
+     "o": [
+      "Mimi hũ pyharéicha.",
+      "Mimi okaru.",
+      "Ha'e oiko Ana rógape."
+     ]
+    },
+    {
+     "id": "gua-14",
+     "lv": "d",
+     "t": "mc",
+     "p": "g1",
+     "q": "¿Qué oración tiene personificación?",
+     "a": "Jasy omaña ovetã rupi.",
+     "o": [
+      "Jasy omaña ovetã rupi.",
+      "Mimi oke apyka ári.",
+      "Mimi ovy'a."
+     ]
+    },
+    {
+     "id": "gua-15",
+     "lv": "d",
+     "t": "mc",
+     "p": "g1",
+     "q": "¿Cuál es la idea principal?",
+     "a": "Un día de Mimi, el gato de Ana",
+     "o": [
+      "Un día de Mimi, el gato de Ana",
+      "Cómo es la luna",
+      "El patio de la escuela"
+     ]
+    },
+    {
+     "id": "gua-16",
+     "lv": "d",
+     "t": "fill",
+     "q": "Conjugá guata (caminar): Ore ______",
+     "a": [
+      "roguata"
+     ]
+    },
+    {
+     "id": "gua-17",
+     "lv": "d",
+     "t": "fill",
+     "q": "Conjugá purahéi (cantar): Ha'e ______",
+     "a": [
+      "opurahéi",
+      "opurahei"
+     ]
+    },
+    {
+     "id": "gua-18",
+     "lv": "d",
+     "t": "mc",
+     "q": "Peẽ ______ (jahu: bañarse)",
+     "a": "pejahu",
+     "o": [
+      "pejahu",
+      "jajahu",
+      "ojahu"
+     ]
+    },
+    {
+     "id": "gua-19",
+     "lv": "d",
+     "t": "mc",
+     "p": "g1",
+     "q": "“Mimi ohecha jasy”: ¿con qué sentido lo percibimos?",
+     "a": "Vista",
+     "o": [
+      "Vista",
+      "Oído",
+      "Olfato"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mat",
+   "name": "Matemática",
+   "tag": "Números",
+   "lang": "es",
+   "color": "mat",
+   "cards": [
+    [
+     "1 metro",
+     "= 100 centímetros"
+    ],
+    [
+     "1 hora",
+     "= 60 minutos"
+    ],
+    [
+     "Media hora",
+     "= 30 minutos"
+    ],
+    [
+     "Cuarto de hora",
+     "= 15 minutos"
+    ],
+    [
+     "Vuelto",
+     "Lo que pagué menos lo que cuesta"
+    ],
+    [
+     "Billetes de Paraguay",
+     "2.000 · 5.000 · 10.000 · 20.000 · 50.000 · 100.000 Gs"
+    ],
+    [
+     "Barras parte-todo",
+     "El todo arriba, las partes abajo. Sirve para juntar o separar."
+    ],
+    [
+     "Barras de comparación",
+     "Dos barras, una al lado de la otra. La diferencia es lo que sobra."
+    ]
+   ],
+   "questions": [
+    {
+     "id": "mat-01",
+     "lv": "f",
+     "t": "fill",
+     "num": true,
+     "q": "2 billetes de 20.000 + 1 billete de 5.000 = ¿cuántos guaraníes?",
+     "a": [
+      "45000"
+     ]
+    },
+    {
+     "id": "mat-02",
+     "lv": "f",
+     "t": "fill",
+     "num": true,
+     "q": "3 metros = ¿cuántos centímetros?",
+     "a": [
+      "300"
+     ]
+    },
+    {
+     "id": "mat-03",
+     "lv": "f",
+     "t": "fill",
+     "num": true,
+     "q": "2 horas = ¿cuántos minutos?",
+     "a": [
+      "120"
+     ]
+    },
+    {
+     "id": "mat-04",
+     "lv": "f",
+     "t": "mc",
+     "q": "¿Cuál es el billete de mayor valor?",
+     "a": "100.000 Gs",
+     "o": [
+      "100.000 Gs",
+      "50.000 Gs",
+      "20.000 Gs"
+     ]
+    },
+    {
+     "id": "mat-05",
+     "lv": "f",
+     "t": "tf",
+     "q": "6 × 5 = 30",
+     "a": true
+    },
+    {
+     "id": "mat-06",
+     "lv": "f",
+     "t": "fill",
+     "num": true,
+     "q": "Media hora = ¿cuántos minutos?",
+     "a": [
+      "30"
+     ]
+    },
+    {
+     "id": "mat-07",
+     "lv": "m",
+     "t": "fill",
+     "num": true,
+     "q": "Compro una pelota de 28.000 Gs y pago con un billete de 50.000. ¿Cuánto me dan de vuelto?",
+     "a": [
+      "22000"
+     ]
+    },
+    {
+     "id": "mat-08",
+     "lv": "m",
+     "t": "fill",
+     "num": true,
+     "q": "Tengo 3 billetes de 10.000 y 2 billetes de 5.000. ¿Cuánto tengo en total?",
+     "a": [
+      "40000"
+     ]
+    },
+    {
+     "id": "mat-09",
+     "lv": "m",
+     "t": "fill",
+     "num": true,
+     "q": "Hay 5 cajas con 8 lápices cada una. Regalo 6 lápices. ¿Cuántos me quedan?",
+     "a": [
+      "34"
+     ]
+    },
+    {
+     "id": "mat-10",
+     "lv": "m",
+     "t": "fill",
+     "num": true,
+     "q": "Se reparten 36 figuritas entre 6 amigos. Después cada uno compra 3 más. ¿Cuántas tiene cada uno?",
+     "a": [
+      "9"
+     ]
+    },
+    {
+     "id": "mat-11",
+     "lv": "m",
+     "t": "fill",
+     "num": true,
+     "q": "Una cinta mide 6 m. Corto 2 m. ¿Cuántos centímetros quedan?",
+     "a": [
+      "400"
+     ]
+    },
+    {
+     "id": "mat-12",
+     "lv": "m",
+     "t": "mc",
+     "q": "La clase empieza a las 7:30 y dura 45 minutos. ¿A qué hora termina?",
+     "a": "8:15",
+     "o": [
+      "8:15",
+      "8:00",
+      "8:45"
+     ]
+    },
+    {
+     "id": "mat-13",
+     "lv": "m",
+     "t": "fill",
+     "num": true,
+     "q": "¿Cuántos billetes de 5.000 necesito para juntar 25.000 Gs?",
+     "a": [
+      "5"
+     ]
+    },
+    {
+     "id": "mat-14",
+     "lv": "d",
+     "t": "fill",
+     "num": true,
+     "q": "Una mochila y una cartuchera cuestan 75.000 Gs juntas. La cartuchera cuesta 15.000. ¿Cuánto cuesta la mochila?",
+     "html": "<div class=\"bm\"><div class=\"bm-row\"><div class=\"bm-bar total\" style=\"flex:1\">Todo: 75.000 Gs</div></div><div class=\"bm-row\"><div class=\"bm-bar q\" style=\"flex:60\">Mochila: ?</div><div class=\"bm-bar\" style=\"flex:15\">15.000</div></div></div>",
+     "a": [
+      "60000"
+     ]
+    },
+    {
+     "id": "mat-15",
+     "lv": "d",
+     "t": "fill",
+     "num": true,
+     "q": "Luis tiene 35.000 Gs. Ana tiene 12.000 más que Luis. ¿Cuánto tiene Ana?",
+     "html": "<div class=\"bm\"><div class=\"bm-row\"><span class=\"bm-name\">Luis</span><div class=\"bm-bar\" style=\"flex:35\">35.000</div><div style=\"flex:12\"></div></div><div class=\"bm-row\"><span class=\"bm-name\">Ana</span><div class=\"bm-bar\" style=\"flex:35\">35.000</div><div class=\"bm-bar q\" style=\"flex:12\">12.000</div></div></div>",
+     "a": [
+      "47000"
+     ]
+    },
+    {
+     "id": "mat-16",
+     "lv": "d",
+     "t": "fill",
+     "num": true,
+     "q": "Luis tiene 35.000 Gs y Ana 47.000 Gs. ¿Cuánto tienen entre los dos?",
+     "a": [
+      "82000"
+     ]
+    },
+    {
+     "id": "mat-17",
+     "lv": "d",
+     "t": "fill",
+     "num": true,
+     "q": "Un libro cuesta 4 veces lo que un lápiz. El lápiz cuesta 3.000 Gs. ¿Cuánto cuesta el libro?",
+     "html": "<div class=\"bm\"><div class=\"bm-row\"><span class=\"bm-name\">Lápiz</span><div class=\"bm-bar\" style=\"flex:1\">3.000</div><div style=\"flex:3\"></div></div><div class=\"bm-row\"><span class=\"bm-name\">Libro</span><div class=\"bm-bar q\" style=\"flex:1\">3.000</div><div class=\"bm-bar q\" style=\"flex:1\">3.000</div><div class=\"bm-bar q\" style=\"flex:1\">3.000</div><div class=\"bm-bar q\" style=\"flex:1\">3.000</div></div></div>",
+     "a": [
+      "12000"
+     ]
+    },
+    {
+     "id": "mat-18",
+     "lv": "d",
+     "t": "mc",
+     "q": "La película empieza a las 4:15 y dura 2 horas. ¿A qué hora termina?",
+     "a": "6:15",
+     "o": [
+      "6:15",
+      "6:45",
+      "5:15"
+     ]
+    },
+    {
+     "id": "mat-19",
+     "lv": "d",
+     "t": "fill",
+     "num": true,
+     "q": "Corro 3 vueltas de 100 m y después camino 50 m. ¿Cuántos metros hice en total?",
+     "a": [
+      "350"
+     ]
+    },
+    {
+     "id": "mat-20",
+     "lv": "d",
+     "t": "mc",
+     "q": "“Entre los dos tienen 50.000 Gs.” ¿Qué modelo de barras usás?",
+     "a": "Parte-todo",
+     "o": [
+      "Parte-todo",
+      "Comparación"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vst",
+   "name": "Vida Social y Trabajo",
+   "tag": "Paraguay",
+   "lang": "es",
+   "color": "vst",
+   "cards": [
+    [
+     "Agricultura",
+     "Cultivar la tierra: soja, maíz, mandioca."
+    ],
+    [
+     "Ganadería",
+     "Criar animales: carne, leche, cuero."
+    ],
+    [
+     "Explotación forestal",
+     "Usar los árboles: madera, leña. Hay que reforestar."
+    ],
+    [
+     "Explotación minera",
+     "Sacar minerales: piedra caliza, arcilla, arena."
+    ],
+    [
+     "Migración",
+     "Mudarse de un lugar a otro."
+    ],
+    [
+     "15 de agosto de 1537",
+     "Juan de Salazar de Espinosa funda Asunción."
+    ],
+    [
+     "14 y 15 de mayo de 1811",
+     "Independencia del Paraguay."
+    ],
+    [
+     "Mestizo",
+     "Persona nacida de la mezcla de dos pueblos, como españoles y guaraníes."
+    ]
+   ],
+   "questions": [
+    {
+     "id": "vst-01",
+     "lv": "f",
+     "t": "mc",
+     "q": "¿Qué hace un agricultor?",
+     "a": "Cultiva la tierra",
+     "o": [
+      "Cultiva la tierra",
+      "Cría vacas",
+      "Saca minerales"
+     ]
+    },
+    {
+     "id": "vst-02",
+     "lv": "f",
+     "t": "mc",
+     "q": "¿Qué producto viene de la agricultura?",
+     "a": "Mandioca",
+     "o": [
+      "Mandioca",
+      "Leche",
+      "Madera"
+     ]
+    },
+    {
+     "id": "vst-03",
+     "lv": "f",
+     "t": "tf",
+     "q": "La ganadería es criar animales.",
+     "a": true
+    },
+    {
+     "id": "vst-04",
+     "lv": "f",
+     "t": "mc",
+     "q": "¿Qué recordamos el 15 de agosto?",
+     "a": "La fundación de Asunción",
+     "o": [
+      "La fundación de Asunción",
+      "La Independencia",
+      "Navidad"
+     ]
+    },
+    {
+     "id": "vst-05",
+     "lv": "f",
+     "t": "match",
+     "q": "Uní cada actividad con un producto.",
+     "pairs": [
+      [
+       "Ganadería",
+       "leche"
+      ],
+      [
+       "Explotación forestal",
+       "madera"
+      ],
+      [
+       "Explotación minera",
+       "piedra caliza"
+      ],
+      [
+       "Agricultura",
+       "maíz"
+      ]
+     ]
+    },
+    {
+     "id": "vst-06",
+     "lv": "m",
+     "t": "mc",
+     "q": "¿Qué es la migración?",
+     "a": "Mudarse de un lugar a otro",
+     "o": [
+      "Mudarse de un lugar a otro",
+      "Plantar árboles",
+      "Criar animales"
+     ]
+    },
+    {
+     "id": "vst-07",
+     "lv": "m",
+     "t": "tf",
+     "q": "Los guaraníes vivían en aldeas.",
+     "a": true
+    },
+    {
+     "id": "vst-08",
+     "lv": "m",
+     "t": "mc",
+     "q": "¿Qué hacían los guaraníes?",
+     "a": "Cultivaban, cazaban y pescaban",
+     "o": [
+      "Cultivaban, cazaban y pescaban",
+      "Manejaban tractores",
+      "Trabajaban en fábricas"
+     ]
+    },
+    {
+     "id": "vst-09",
+     "lv": "m",
+     "t": "mc",
+     "q": "¿Quién es una heroína de la Independencia?",
+     "a": "Juana María de Lara",
+     "o": [
+      "Juana María de Lara",
+      "Juan de Salazar de Espinosa",
+      "Bernardo de Velasco"
+     ]
+    },
+    {
+     "id": "vst-10",
+     "lv": "m",
+     "t": "mc",
+     "q": "¿Quién era el gobernador español en 1811?",
+     "a": "Bernardo de Velasco",
+     "o": [
+      "Bernardo de Velasco",
+      "Fulgencio Yegros",
+      "Vicente Ignacio Iturbe"
+     ]
+    },
+    {
+     "id": "vst-11",
+     "lv": "m",
+     "t": "tf",
+     "q": "La época independiente empezó en 1811.",
+     "a": true
+    },
+    {
+     "id": "vst-12",
+     "lv": "m",
+     "t": "mc",
+     "q": "¿Para qué se usa la arcilla?",
+     "a": "Para hacer tejas y ladrillos",
+     "o": [
+      "Para hacer tejas y ladrillos",
+      "Para hacer leche",
+      "Para hacer papel"
+     ]
+    },
+    {
+     "id": "vst-13",
+     "lv": "d",
+     "t": "order",
+     "q": "Ordená las épocas de la historia del Paraguay.",
+     "items": [
+      "Época prehispánica",
+      "Época colonial",
+      "Época independiente"
+     ]
+    },
+    {
+     "id": "vst-14",
+     "lv": "d",
+     "t": "mc",
+     "q": "Si en una ciudad nacen más bebés que las personas que mueren, la población…",
+     "a": "aumenta",
+     "o": [
+      "aumenta",
+      "disminuye",
+      "no cambia"
+     ]
+    },
+    {
+     "id": "vst-15",
+     "lv": "d",
+     "t": "mc",
+     "q": "¿Quiénes fundaron las reducciones?",
+     "a": "Los sacerdotes jesuitas",
+     "o": [
+      "Los sacerdotes jesuitas",
+      "Los ganaderos del Chaco",
+      "Los próceres de 1811"
+     ]
+    },
+    {
+     "id": "vst-16",
+     "lv": "d",
+     "t": "mc",
+     "q": "¿Qué pasó la noche del 14 al 15 de mayo de 1811?",
+     "a": "Paraguay se independizó de España",
+     "o": [
+      "Paraguay se independizó de España",
+      "Se fundó Asunción",
+      "Llegaron los primeros pobladores"
+     ]
+    },
+    {
+     "id": "vst-17",
+     "lv": "d",
+     "t": "mc",
+     "q": "¿Por qué muchas familias se mudan del campo a la ciudad?",
+     "a": "Para buscar trabajo y estudio",
+     "o": [
+      "Para buscar trabajo y estudio",
+      "Porque en la ciudad no hay casas",
+      "Para criar vacas"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "la",
+   "name": "Language Arts",
+   "tag": "English",
+   "lang": "en",
+   "color": "la",
+   "passages": {
+    "e1": {
+     "title": "Pepper and Rocket",
+     "text": "Mia has a cat named Pepper. Pepper is small and quiet. She likes to sleep on the sofa all morning. Leo has a dog named Rocket. Rocket is big and loud. He likes to run in the park. Both pets love their families. Both pets like to play with a ball. Pepper plays alone, but Rocket plays with Leo. Tomorrow, Mia and Leo are going to take their pets to the vet. The vet will check their teeth."
+    }
+   },
+   "cards": [
+    [
+     "Synonyms",
+     "Words that mean the same: small – little."
+    ],
+    [
+     "Antonyms",
+     "Words that mean the opposite: loud – quiet."
+    ],
+    [
+     "Common noun",
+     "A general name, small letter: cat, park."
+    ],
+    [
+     "Proper noun",
+     "A special name, capital letter: Pepper, Paraguay."
+    ],
+    [
+     "will",
+     "A decision now, a promise, a guess: I will help."
+    ],
+    [
+     "going to",
+     "A plan, or something you can see is coming: It is going to rain."
+    ],
+    [
+     "Compare",
+     "Find how things are alike: both, also, same."
+    ],
+    [
+     "Contrast",
+     "Find how things are different: but, however, unlike."
+    ],
+    [
+     "ar · or · ore",
+     "park · morning · more"
+    ]
+   ],
+   "questions": [
+    {
+     "id": "la-01",
+     "lv": "f",
+     "t": "mc",
+     "p": "e1",
+     "q": "Who is Pepper?",
+     "a": "Mia's cat",
+     "o": [
+      "Mia's cat",
+      "Leo's dog",
+      "The vet"
+     ]
+    },
+    {
+     "id": "la-02",
+     "lv": "f",
+     "t": "tf",
+     "p": "e1",
+     "q": "Rocket is small and quiet.",
+     "a": false
+    },
+    {
+     "id": "la-03",
+     "lv": "f",
+     "t": "mc",
+     "q": "Which word is a synonym of small?",
+     "a": "little",
+     "o": [
+      "little",
+      "huge",
+      "loud"
+     ]
+    },
+    {
+     "id": "la-04",
+     "lv": "f",
+     "t": "mc",
+     "q": "Which word is an antonym of loud?",
+     "a": "quiet",
+     "o": [
+      "quiet",
+      "noisy",
+      "big"
+     ]
+    },
+    {
+     "id": "la-05",
+     "lv": "f",
+     "t": "mc",
+     "q": "Which one is a proper noun?",
+     "a": "Rocket",
+     "o": [
+      "Rocket",
+      "dog",
+      "sofa"
+     ]
+    },
+    {
+     "id": "la-06",
+     "lv": "m",
+     "t": "mc",
+     "p": "e1",
+     "q": "How are Pepper and Rocket alike?",
+     "a": "Both like to play with a ball.",
+     "o": [
+      "Both like to play with a ball.",
+      "Both are loud.",
+      "Both sleep on the sofa."
+     ]
+    },
+    {
+     "id": "la-07",
+     "lv": "m",
+     "t": "mc",
+     "p": "e1",
+     "q": "“Pepper plays alone, but Rocket plays with Leo.” Which word shows a contrast?",
+     "a": "but",
+     "o": [
+      "but",
+      "plays",
+      "with"
+     ]
+    },
+    {
+     "id": "la-08",
+     "lv": "m",
+     "t": "mc",
+     "q": "Which word has the ar sound?",
+     "a": "park",
+     "o": [
+      "park",
+      "porch",
+      "more"
+     ]
+    },
+    {
+     "id": "la-09",
+     "lv": "m",
+     "t": "mc",
+     "q": "Which word has the or sound?",
+     "a": "morning",
+     "o": [
+      "morning",
+      "market",
+      "shark"
+     ]
+    },
+    {
+     "id": "la-10",
+     "lv": "m",
+     "t": "mc",
+     "q": "The boat sails near the ___.",
+     "a": "shore",
+     "o": [
+      "shore",
+      "shar"
+     ]
+    },
+    {
+     "id": "la-11",
+     "lv": "m",
+     "t": "mc",
+     "q": "Which sentence uses capital letters correctly?",
+     "a": "Mia lives in Paraguay.",
+     "o": [
+      "Mia lives in Paraguay.",
+      "mia lives in paraguay.",
+      "Mia lives in paraguay."
+     ]
+    },
+    {
+     "id": "la-12",
+     "lv": "m",
+     "t": "match",
+     "q": "Match the synonyms.",
+     "pairs": [
+      [
+       "smart",
+       "clever"
+      ],
+      [
+       "tired",
+       "sleepy"
+      ],
+      [
+       "shout",
+       "yell"
+      ],
+      [
+       "little",
+       "small"
+      ]
+     ]
+    },
+    {
+     "id": "la-13",
+     "lv": "d",
+     "t": "mc",
+     "p": "e1",
+     "q": "They planned it. Tomorrow, Mia and Leo ___ take their pets to the vet.",
+     "a": "are going to",
+     "o": [
+      "are going to",
+      "will"
+     ]
+    },
+    {
+     "id": "la-14",
+     "lv": "d",
+     "t": "mc",
+     "q": "“I'm cold.” — “I ___ close the window for you.”",
+     "a": "will",
+     "o": [
+      "will",
+      "am going to"
+     ]
+    },
+    {
+     "id": "la-15",
+     "lv": "d",
+     "t": "mc",
+     "q": "Look! That glass ___ fall off the table!",
+     "a": "is going to",
+     "o": [
+      "is going to",
+      "will"
+     ]
+    },
+    {
+     "id": "la-16",
+     "lv": "d",
+     "t": "match",
+     "q": "Match the antonyms.",
+     "pairs": [
+      [
+       "early",
+       "late"
+      ],
+      [
+       "full",
+       "empty"
+      ],
+      [
+       "win",
+       "lose"
+      ],
+      [
+       "loud",
+       "quiet"
+      ]
+     ]
+    },
+    {
+     "id": "la-17",
+     "lv": "d",
+     "t": "mc",
+     "q": "To contrast means to find how things are…",
+     "a": "different",
+     "o": [
+      "different",
+      "alike",
+      "the same"
+     ]
+    },
+    {
+     "id": "la-18",
+     "lv": "d",
+     "t": "mc",
+     "p": "e1",
+     "q": "Which sentence from the story is about the future?",
+     "a": "The vet will check their teeth.",
+     "o": [
+      "The vet will check their teeth.",
+      "Rocket is big and loud.",
+      "Mia has a cat named Pepper."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sci",
+   "name": "Science and Health",
+   "tag": "English",
+   "lang": "en",
+   "color": "sci",
+   "cards": [
+    [
+     "Meteorologist",
+     "A scientist who studies weather."
+    ],
+    [
+     "Forecast",
+     "A prediction of the weather."
+    ],
+    [
+     "Thermometer",
+     "Measures temperature."
+    ],
+    [
+     "Rain gauge",
+     "Measures how much rain fell."
+    ],
+    [
+     "Anemometer",
+     "Measures wind speed. Its cups spin."
+    ],
+    [
+     "Wind vane",
+     "Shows wind direction."
+    ],
+    [
+     "Barometer",
+     "Measures air pressure."
+    ],
+    [
+     "Habitat",
+     "Where a plant or animal lives and finds food, water and shelter."
+    ],
+    [
+     "Adapt",
+     "Change the way you live to survive."
+    ],
+    [
+     "Endangered",
+     "Very few are left."
+    ],
+    [
+     "Extinct",
+     "None are left."
+    ]
+   ],
+   "questions": [
+    {
+     "id": "sci-01",
+     "lv": "f",
+     "t": "mc",
+     "q": "Which tool has cups that spin in the wind?",
+     "a": "anemometer",
+     "o": [
+      "anemometer",
+      "thermometer",
+      "rain gauge"
+     ]
+    },
+    {
+     "id": "sci-02",
+     "lv": "f",
+     "t": "mc",
+     "q": "What does a rain gauge collect?",
+     "a": "rain",
+     "o": [
+      "rain",
+      "wind",
+      "sunlight"
+     ]
+    },
+    {
+     "id": "sci-03",
+     "lv": "f",
+     "t": "tf",
+     "q": "Weather can change from day to day.",
+     "a": true
+    },
+    {
+     "id": "sci-04",
+     "lv": "f",
+     "t": "mc",
+     "q": "A wind vane shows…",
+     "a": "wind direction",
+     "o": [
+      "wind direction",
+      "temperature",
+      "air pressure"
+     ]
+    },
+    {
+     "id": "sci-05",
+     "lv": "f",
+     "t": "mc",
+     "q": "Which one is severe weather?",
+     "a": "a tornado",
+     "o": [
+      "a tornado",
+      "a light breeze",
+      "a cloudy morning"
+     ]
+    },
+    {
+     "id": "sci-06",
+     "lv": "m",
+     "t": "mc",
+     "q": "What is hail?",
+     "a": "Balls of ice that fall from the sky",
+     "o": [
+      "Balls of ice that fall from the sky",
+      "A warm wind",
+      "A small cloud"
+     ]
+    },
+    {
+     "id": "sci-07",
+     "lv": "m",
+     "t": "mc",
+     "q": "Where does a hurricane form?",
+     "a": "over the ocean",
+     "o": [
+      "over the ocean",
+      "in a desert",
+      "inside a cave"
+     ]
+    },
+    {
+     "id": "sci-08",
+     "lv": "m",
+     "t": "mc",
+     "q": "What helps people get ready for a storm?",
+     "a": "a weather forecast",
+     "o": [
+      "a weather forecast",
+      "a new toy",
+      "a cold drink"
+     ]
+    },
+    {
+     "id": "sci-09",
+     "lv": "m",
+     "t": "tf",
+     "q": "Only people can change environments.",
+     "a": false
+    },
+    {
+     "id": "sci-10",
+     "lv": "m",
+     "t": "mc",
+     "q": "What goes in an emergency kit?",
+     "a": "water, a flashlight and food",
+     "o": [
+      "water, a flashlight and food",
+      "video games",
+      "balloons"
+     ]
+    },
+    {
+     "id": "sci-11",
+     "lv": "m",
+     "t": "mc",
+     "q": "Beavers build a dam and the river becomes a pond. Who changed the environment?",
+     "a": "an animal",
+     "o": [
+      "an animal",
+      "a storm",
+      "a volcano"
+     ]
+    },
+    {
+     "id": "sci-12",
+     "lv": "d",
+     "t": "mc",
+     "q": "Frogs live in a pond. The pond dries up. What might happen to the frogs?",
+     "a": "They move to another pond or die.",
+     "o": [
+      "They move to another pond or die.",
+      "They turn into fish.",
+      "Nothing happens."
+     ]
+    },
+    {
+     "id": "sci-13",
+     "lv": "d",
+     "t": "mc",
+     "q": "When an animal changes the way it lives to survive, it…",
+     "a": "adapts",
+     "o": [
+      "adapts",
+      "melts",
+      "forecasts"
+     ]
+    },
+    {
+     "id": "sci-14",
+     "lv": "d",
+     "t": "mc",
+     "q": "Why do meteorologists measure the weather every day?",
+     "a": "To make forecasts and warn people",
+     "o": [
+      "To make forecasts and warn people",
+      "To make it rain",
+      "To stop the wind"
+     ]
+    },
+    {
+     "id": "sci-15",
+     "lv": "d",
+     "t": "mc",
+     "q": "A kind of animal with no living members is…",
+     "a": "extinct",
+     "o": [
+      "extinct",
+      "endangered",
+      "adapted"
+     ]
+    },
+    {
+     "id": "sci-16",
+     "lv": "d",
+     "t": "mc",
+     "q": "How can people help a habitat?",
+     "a": "Plant trees and keep it clean",
+     "o": [
+      "Plant trees and keep it clean",
+      "Throw trash in the river",
+      "Cut all the trees"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ss",
+   "name": "Social Studies",
+   "tag": "English",
+   "lang": "en",
+   "color": "ss",
+   "cards": [
+    [
+     "Goods",
+     "Things you can touch and buy."
+    ],
+    [
+     "Services",
+     "Work people do for others."
+    ],
+    [
+     "Producer",
+     "Makes goods or gives services."
+    ],
+    [
+     "Consumer",
+     "Buys or uses goods and services."
+    ],
+    [
+     "Income",
+     "Money you earn for working."
+    ],
+    [
+     "Budget",
+     "A plan for spending and saving money."
+    ],
+    [
+     "Scarcity",
+     "Not enough of something for everyone."
+    ],
+    [
+     "Trade",
+     "Give something to get something else."
+    ],
+    [
+     "Natural resource",
+     "Comes from nature: soil, water, trees."
+    ],
+    [
+     "Human resource",
+     "People and their work."
+    ],
+    [
+     "Capital resource",
+     "Tools and machines people make: a hammer, a computer."
+    ]
+   ],
+   "questions": [
+    {
+     "id": "ss-01",
+     "lv": "f",
+     "t": "match",
+     "q": "Is it goods or a service?",
+     "pairs": [
+      [
+       "a teacher teaching",
+       "Service"
+      ],
+      [
+       "a ball",
+       "Goods"
+      ],
+      [
+       "a bus ride",
+       "Service"
+      ],
+      [
+       "an apple",
+       "Goods"
+      ]
+     ]
+    },
+    {
+     "id": "ss-02",
+     "lv": "f",
+     "t": "mc",
+     "q": "Which one is a need?",
+     "a": "water",
+     "o": [
+      "water",
+      "a toy",
+      "candy"
+     ]
+    },
+    {
+     "id": "ss-03",
+     "lv": "f",
+     "t": "tf",
+     "q": "A doctor gives a service.",
+     "a": true
+    },
+    {
+     "id": "ss-04",
+     "lv": "f",
+     "t": "mc",
+     "q": "A person who buys bread is a…",
+     "a": "consumer",
+     "o": [
+      "consumer",
+      "producer",
+      "resource"
+     ]
+    },
+    {
+     "id": "ss-05",
+     "lv": "m",
+     "t": "match",
+     "q": "What type of resource is it?",
+     "pairs": [
+      [
+       "soil",
+       "Natural"
+      ],
+      [
+       "a computer",
+       "Capital"
+      ],
+      [
+       "a farmer",
+       "Human"
+      ],
+      [
+       "a hammer",
+       "Capital"
+      ]
+     ]
+    },
+    {
+     "id": "ss-06",
+     "lv": "m",
+     "t": "mc",
+     "q": "You put money in the bank to use later. You…",
+     "a": "save",
+     "o": [
+      "save",
+      "spend",
+      "trade"
+     ]
+    },
+    {
+     "id": "ss-07",
+     "lv": "m",
+     "t": "mc",
+     "q": "A plan for your money is a…",
+     "a": "budget",
+     "o": [
+      "budget",
+      "service",
+      "scarcity"
+     ]
+    },
+    {
+     "id": "ss-08",
+     "lv": "m",
+     "t": "mc",
+     "q": "You give a toy car to get a book. You…",
+     "a": "trade",
+     "o": [
+      "trade",
+      "save",
+      "earn"
+     ]
+    },
+    {
+     "id": "ss-09",
+     "lv": "m",
+     "t": "mc",
+     "q": "There is only one ice cream left and 5 kids want it. This is…",
+     "a": "scarcity",
+     "o": [
+      "scarcity",
+      "income",
+      "a budget"
+     ]
+    },
+    {
+     "id": "ss-10",
+     "lv": "d",
+     "t": "mc",
+     "q": "A farmer uses a tractor to grow corn. The tractor is a…",
+     "a": "capital resource",
+     "o": [
+      "capital resource",
+      "natural resource",
+      "human resource"
+     ]
+    },
+    {
+     "id": "ss-11",
+     "lv": "d",
+     "t": "mc",
+     "q": "Which job makes goods?",
+     "a": "A carpenter making a table",
+     "o": [
+      "A carpenter making a table",
+      "A nurse helping a patient",
+      "A teacher teaching math"
+     ]
+    },
+    {
+     "id": "ss-12",
+     "lv": "d",
+     "t": "fill",
+     "num": true,
+     "q": "You have 15.000 Gs. A toy costs 9.000 Gs. How much is left to save?",
+     "a": [
+      "6000"
+     ]
+    },
+    {
+     "id": "ss-13",
+     "lv": "d",
+     "t": "mc",
+     "q": "Why do people make a budget?",
+     "a": "To plan how to spend and save",
+     "o": [
+      "To plan how to spend and save",
+      "To spend all their money",
+      "To get free things"
+     ]
+    },
+    {
+     "id": "ss-14",
+     "lv": "d",
+     "t": "mc",
+     "q": "Is a teacher a producer?",
+     "a": "Yes, a producer of a service",
+     "o": [
+      "Yes, a producer of a service",
+      "No, a teacher is a resource only",
+      "Yes, a producer of goods"
+     ]
+    }
+   ]
+  }
+ ],
+ "dictation": {
+  "G": [
+   "gota",
+   "goma",
+   "gusto",
+   "guerra",
+   "guiso",
+   "gemelo",
+   "gimnasia",
+   "origen",
+   "girar",
+   "página"
+  ],
+  "J": [
+   "jardín",
+   "juego",
+   "jamón",
+   "jefe",
+   "ajo",
+   "pasaje",
+   "mensaje",
+   "mujer",
+   "ojera",
+   "dibujo"
+  ],
+  "H": [
+   "hada",
+   "hilo",
+   "horno",
+   "hueso",
+   "hierba",
+   "humo",
+   "hamaca",
+   "almohada",
+   "hijo",
+   "ahí"
+  ],
+  "LL": [
+   "llama",
+   "lleno",
+   "pollito",
+   "cuchillo",
+   "sello",
+   "anillo",
+   "pasillo",
+   "castillo",
+   "brillo",
+   "llorar"
+  ],
+  "Y": [
+   "yate",
+   "yogur",
+   "yegua",
+   "joya",
+   "muy",
+   "ley",
+   "voy",
+   "soy",
+   "buey",
+   "yeso"
+  ]
+ }
+}

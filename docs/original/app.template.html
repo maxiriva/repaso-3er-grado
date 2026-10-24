@@ -1,0 +1,364 @@
+<title>Repaso 3er grado</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;700;800&display=swap">
+<style>
+/* Layout: a game board on squared notebook paper — one column, subject "stickers", big tap targets for 8–9 year olds */
+:root{
+  --paper:#F4F7FB; --grid:#E0E7F1; --ink:#1B2539; --ink-soft:#56627A; --card:#FFFFFF; --line:#D2DAE6;
+  --btn:#1B2539; --btn-ink:#FFFFFF; --ok:#16855A; --ok-bg:#E2F4EB; --bad:#C63B33; --bad-bg:#FBE7E5; --star:#F0AE1C; --star-off:#D7DEE8;
+  --c-com:#D4552E; --c-gua:#23864F; --c-mat:#2B64C8; --c-vst:#B4780C; --c-la:#704DC0; --c-sci:#10808C; --c-ss:#B83C70; --c-mix:#1B2539;
+  --f-display:"Baloo 2","Trebuchet MS",system-ui,sans-serif;
+  --f-body:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#101926; --grid:#192537; --ink:#E8EEF7; --ink-soft:#9DABC1; --card:#172234; --line:#29374E;
+  --btn:#E8EEF7; --btn-ink:#101926; --ok:#3CCB87; --ok-bg:#15342A; --bad:#F06E68; --bad-bg:#391E21; --star:#F4BD3C; --star-off:#33425A;
+  --c-com:#EF7A55; --c-gua:#4BC07E; --c-mat:#6496F1; --c-vst:#ECB242; --c-la:#A083E7; --c-sci:#3DBBC5; --c-ss:#E46D9E; --c-mix:#E8EEF7; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#101926; --grid:#192537; --ink:#E8EEF7; --ink-soft:#9DABC1; --card:#172234; --line:#29374E;
+  --btn:#E8EEF7; --btn-ink:#101926; --ok:#3CCB87; --ok-bg:#15342A; --bad:#F06E68; --bad-bg:#391E21; --star:#F4BD3C; --star-off:#33425A;
+  --c-com:#EF7A55; --c-gua:#4BC07E; --c-mat:#6496F1; --c-vst:#ECB242; --c-la:#A083E7; --c-sci:#3DBBC5; --c-ss:#E46D9E; --c-mix:#E8EEF7; color-scheme:dark}
+*{box-sizing:border-box}
+body{background-color:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.5;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
+.wrap{max-width:760px;margin:0 auto;padding-block:20px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:18px}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.1;margin:0;text-wrap:balance}
+h1{font-size:2rem} h2{font-size:1.45rem} h3{font-size:1.15rem}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--c-mat);outline-offset:2px}
+.label{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:var(--ink-soft)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.back{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-weight:800;font-size:.95rem}
+.who{font-weight:800;color:var(--ink-soft);font-size:.95rem;background:none;border:none;text-decoration:underline;padding:0}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.hero{display:flex;flex-direction:column;gap:6px}
+.hero p{color:var(--ink-soft)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.subj{text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:14px;display:flex;gap:12px;align-items:center;transition:transform .15s}
+.subj:hover{transform:translateY(-2px)}
+.sticker{flex:none;width:52px;height:52px;border-radius:50%;background:var(--sc);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-weight:700;font-size:1.05rem;transform:rotate(-6deg);box-shadow:0 2px 0 color-mix(in srgb,var(--sc) 60%,#000)}
+.subj .meta{display:flex;flex-direction:column;gap:2px;min-width:0}
+.subj small{color:var(--ink-soft)}
+.stars{color:var(--star-off);letter-spacing:1px}
+.stars b{color:var(--star);font-weight:400}
+.flash{display:flex;align-items:center;gap:14px;background:var(--btn);color:var(--btn-ink);border:none;border-radius:16px;padding:16px 18px;text-align:left}
+.flash strong{font-family:var(--f-display);font-size:1.3rem;display:block}
+.flash span{opacity:.85;font-size:.95rem}
+.bolt{font-size:2rem;line-height:1}
+.band{background:var(--sc);color:#fff;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:4px}
+.modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.mode{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:16px;text-align:left;display:flex;flex-direction:column;gap:4px}
+.mode strong{font-family:var(--f-display);font-size:1.2rem}
+.mode small{color:var(--ink-soft)}
+.prog{height:10px;background:var(--line);border-radius:999px;overflow:hidden}
+.prog > div{height:100%;background:var(--sc);border-radius:999px;transition:width .3s}
+.qmeta{display:flex;justify-content:space-between;align-items:center;color:var(--ink-soft);font-size:.9rem;gap:8px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:2px 10px;font-weight:800;font-size:.8rem;border:1.5px solid currentColor}
+.pill.f{color:var(--ok)} .pill.m{color:var(--star)} .pill.d{color:var(--bad)}
+.streak{font-weight:800;color:var(--star)}
+details.passage{background:color-mix(in srgb,var(--sc) 8%,var(--card));border:1.5px solid color-mix(in srgb,var(--sc) 35%,var(--line));border-radius:12px;padding:12px 14px}
+details.passage summary{font-weight:800;cursor:pointer}
+details.passage p{margin-top:8px}
+.gloss{font-size:.88rem;color:var(--ink-soft)}
+.q{font-size:1.2rem;font-weight:800}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{text-align:left;background:var(--card);border:2px solid var(--line);border-radius:12px;padding:12px 14px;font-size:1.05rem}
+.opt:hover:not(:disabled){border-color:var(--sc)}
+.opt.ok{border-color:var(--ok);background:var(--ok-bg)}
+.opt.bad{border-color:var(--bad);background:var(--bad-bg)}
+.opt:disabled{cursor:default}
+.tf{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tf .opt{text-align:center;font-family:var(--f-display);font-size:1.25rem}
+input.fill{font:inherit;font-size:1.2rem;padding:12px 14px;border:2px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);width:100%}
+.mrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:center}
+.mrow span{font-weight:800}
+select{font:inherit;padding:10px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);width:100%}
+select.ok{border-color:var(--ok)} select.bad{border-color:var(--bad)}
+.olist{display:flex;flex-direction:column;gap:8px}
+.oitem{display:grid;grid-template-columns:28px 1fr auto auto;gap:8px;align-items:center;background:var(--card);border:2px solid var(--line);border-radius:12px;padding:8px 10px}
+.oitem .num{font-family:var(--f-display);color:var(--ink-soft)}
+.oitem button{border:1.5px solid var(--line);background:transparent;border-radius:8px;width:38px;height:38px}
+.oitem.ok{border-color:var(--ok)} .oitem.bad{border-color:var(--bad)}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.primary{background:var(--btn);color:var(--btn-ink);border:none;border-radius:12px;padding:12px 22px;font-family:var(--f-display);font-weight:700;font-size:1.1rem}
+.ghost{background:transparent;border:1.5px solid var(--line);border-radius:12px;padding:11px 18px;font-weight:800}
+.fb{border-radius:12px;padding:12px 14px;font-weight:800;display:flex;flex-direction:column;gap:4px}
+.fb.ok{background:var(--ok-bg);color:var(--ok)}
+.fb.bad{background:var(--bad-bg);color:var(--bad)}
+.fb .ans{color:var(--ink);font-weight:400}
+.pop{animation:pop .35s ease-out}
+@keyframes pop{0%{transform:scale(.96)}60%{transform:scale(1.02)}100%{transform:scale(1)}}
+.end{align-items:center;text-align:center}
+.bigstars{font-size:3rem;letter-spacing:6px;color:var(--star-off)}
+.bigstars b{color:var(--star);font-weight:400}
+.review{width:100%;text-align:left;display:flex;flex-direction:column;gap:8px}
+.review li{margin:0}
+.review ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.bm{display:flex;flex-direction:column;gap:6px;font-size:.92rem;overflow-x:auto}
+.bm-row{display:flex;gap:4px;align-items:stretch;min-width:300px}
+.bm-name{width:58px;flex:none;align-self:center;font-weight:800}
+.bm-bar{border:2px solid var(--c-mat);background:color-mix(in srgb,var(--c-mat) 14%,var(--card));border-radius:6px;padding:6px 8px;text-align:center;font-weight:800}
+.bm-bar.total{background:transparent}
+.bm-bar.q{border-style:dashed;background:transparent}
+.fcard{min-height:200px;border-radius:18px;border:2px solid var(--sc);background:color-mix(in srgb,var(--sc) 8%,var(--card));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:24px;text-align:center;width:100%}
+.fcard .front{font-family:var(--f-display);font-size:1.8rem}
+.fcard .backside{font-size:1.15rem}
+.fcard small{color:var(--ink-soft)}
+.dchips{display:flex;flex-wrap:wrap;gap:8px}
+.dchip{border:2px solid var(--line);background:var(--card);border-radius:999px;padding:6px 16px;font-family:var(--f-display);font-weight:700}
+.speak{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--sc);color:#fff;border:none;border-radius:16px;padding:18px;font-family:var(--f-display);font-size:1.3rem}
+.reveal{font-size:.88rem;color:var(--ink-soft);background:none;border:none;text-decoration:underline;padding:0;align-self:flex-start}
+.word{font-family:var(--f-display);font-size:1.6rem}
+.note{font-size:.88rem;color:var(--ink-soft)}
+.foot{font-size:.82rem;color:var(--ink-soft);text-align:center}
+@media (max-width:480px){h1{font-size:1.65rem}.mrow{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap" id="app"></div>
+
+<script id="bank" type="application/json">/*BANK*/</script>
+<script>
+const BANK = JSON.parse(document.getElementById("bank").textContent);
+const S = BANK.subjects;
+const COLORS = {com:"var(--c-com)",gua:"var(--c-gua)",mat:"var(--c-mat)",vst:"var(--c-vst)",la:"var(--c-la)",sci:"var(--c-sci)",ss:"var(--c-ss)"};
+const ABBR = {com:"Aa",gua:"Gn",mat:"123",vst:"PY",la:"En",sci:"Sc",ss:"SS"};
+const TXT = {
+  es:{play:"Jugar",playSub:"8 preguntas, de fácil a difícil. Cambian cada vez.",cards:"Tarjetas",cardsSub:"Mirá el concepto y dalo vuelta.",check:"Comprobar",next:"Siguiente",finish:"Ver resultado",again:"Jugar otra vez",back:"Volver",
+      t:"Verdadero",f:"Falso",choose:"Elegí…",read:"Leer el texto",help:"Palabras de ayuda",of:"de",answer:"La respuesta correcta:",typeHere:"Escribí tu respuesta",
+      ok:["¡Muy bien!","¡Excelente!","¡Genial!","¡Así se hace!","¡Bravo!"],bad:["¡Casi! Mirá la respuesta.","No pasa nada, se aprende probando.","¡Seguí intentando!"],
+      end3:"¡Campeón! Te salió casi todo.",end2:"¡Muy bien! Repasá lo que falló y jugá de nuevo.",end1:"¡Buen comienzo! Mirá las tarjetas y volvé a intentar.",
+      q:"Pregunta",lv:{f:"Fácil",m:"Medio",d:"Desafío"},up:"Subir",down:"Bajar",orderHint:"Usá las flechas para ordenar.",review:"Para repasar",flip:"Dar vuelta",prev:"Anterior",nxt:"Siguiente",tap:"Tocá la tarjeta para darla vuelta",streak:"seguidas"},
+  en:{play:"Play",playSub:"8 questions, from easy to hard. They change every time.",cards:"Flashcards",cardsSub:"Read the word and flip the card.",check:"Check",next:"Next",finish:"See my score",again:"Play again",back:"Back",
+      t:"True",f:"False",choose:"Choose…",read:"Read the text",help:"Help words",of:"of",answer:"The right answer:",typeHere:"Type your answer",
+      ok:["Great job!","Awesome!","You got it!","Excellent!","Well done!"],bad:["Almost! Look at the answer.","Good try! Look at the answer.","Keep going, you are learning!"],
+      end3:"Superstar! You got almost everything.",end2:"Well done! Review your mistakes and play again.",end1:"Good start! Look at the flashcards and try again.",
+      q:"Question",lv:{f:"Easy",m:"Medium",d:"Challenge"},up:"Move up",down:"Move down",orderHint:"Use the arrows to put them in order.",review:"To review",flip:"Flip",prev:"Back",nxt:"Next",tap:"Tap the card to flip it",streak:"in a row"}
+};
+
+/* Per-viewer convenience only: name and best stars stay in this browser. */
+let store = {name:"", best:{}};
+try{ const raw = localStorage.getItem("repaso3-v1"); if(raw) store = Object.assign(store, JSON.parse(raw)); }catch(e){}
+function save(){ try{ localStorage.setItem("repaso3-v1", JSON.stringify(store)); }catch(e){} }
+
+const app = document.getElementById("app");
+const $ = (h)=>{ const t=document.createElement("template"); t.innerHTML=h.trim(); return t.content.firstElementChild; };
+const esc = (s)=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const shuffle = (a)=>{ a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
+const pick = (a)=>a[Math.floor(Math.random()*a.length)];
+const deacc = (s)=>s.normalize("NFD").replace(/[̀-ͯ]/g,"");
+const norm = (s)=>String(s).toLowerCase().replace(/[’‘`´]/g,"'").replace(/[.!¡¿?,]/g,"").replace(/\s+/g," ").trim();
+const subj = (id)=>S.find(s=>s.id===id);
+const starsHtml = (n)=>`<span class="stars" aria-label="${n} de 3">${[0,1,2].map(i=>i<n?"<b>★</b>":"★").join("")}</span>`;
+const hi = ()=> store.name ? `, ${esc(store.name)}` : "";
+
+let st = {};
+function go(view, extra){ st = Object.assign({view}, extra||{}); render(); window.scrollTo({top:0}); }
+function render(){
+  app.innerHTML = ""; app.style.removeProperty("--sc");
+  if(!store.name && st.view!=="name") return renderName();
+  ({name:renderName, subject:renderSubject, quiz:renderQuiz, cards:renderCards, dict:renderDict}[st.view] || renderHome)();
+}
+function topBar(label, fn){
+  const t=$(`<div class="top"><button class="back">← ${esc(label)}</button><span class="note">${esc(store.name)}</span></div>`);
+  t.querySelector("button").onclick=fn; return t;
+}
+
+function renderName(){
+  const c = $(`<section class="card"><span class="label">Repaso 3er grado</span><h1>¡Hola! ¿Cómo te llamás?</h1><p>Escribí tu nombre o tu apodo. Solo se guarda en este dispositivo.</p>
+    <input class="fill" id="name" maxlength="20" autocomplete="off" placeholder="Tu nombre"><div class="actions"><button class="primary">¡Empezar!</button></div></section>`);
+  const inp = c.querySelector("input"); inp.value = store.name||"";
+  const go2 = ()=>{ const v = inp.value.trim().slice(0,20); if(!v) return; store.name=v; save(); go("home"); };
+  c.querySelector("button").onclick = go2; inp.onkeydown = (e)=>{ if(e.key==="Enter") go2(); };
+  app.append(c); setTimeout(()=>inp.focus(),50);
+}
+
+function renderHome(){
+  const h = $(`<header class="hero"><div class="top"><span class="label">Repaso 3er grado</span><button class="who">No soy ${esc(store.name)}</button></div><h1>¡Hola${hi()}! ¿Qué jugamos hoy?</h1><p>Elegí una materia o probá el desafío relámpago con preguntas de todo.</p></header>`);
+  h.querySelector(".who").onclick = ()=>{ store.name=""; save(); go("name"); };
+  app.append(h);
+  const fl = $(`<button class="flash"><span class="bolt" aria-hidden="true">⚡</span><div><strong>Desafío relámpago</strong><span>10 preguntas mezcladas de todas las materias · ${starsHtml(store.best["mix"]||0)}</span></div></button>`);
+  fl.onclick = ()=>startQuiz("mix"); app.append(fl);
+  const g = $(`<section class="grid" aria-label="Materias"></section>`);
+  S.forEach(s=>{
+    const b = $(`<button class="subj" style="--sc:${COLORS[s.color]}"><span class="sticker">${ABBR[s.id]}</span><span class="meta"><h3>${esc(s.name)}</h3><small>${esc(s.tag)}</small>${starsHtml(store.best[s.id]||0)}</span></button>`);
+    b.onclick = ()=>go("subject",{sid:s.id}); g.append(b);
+  });
+  app.append(g);
+  app.append($(`<p class="foot">Hecho para repasar en casa. No pide cuenta ni guarda datos fuera de este dispositivo.</p>`));
+}
+
+function renderSubject(){
+  const s = subj(st.sid), T = TXT[s.lang];
+  app.style.setProperty("--sc", COLORS[s.color]);
+  app.append(topBar(s.lang==="es"?"Inicio":"Home", ()=>go("home")));
+  app.append($(`<section class="band"><span class="label" style="color:#fff;opacity:.85">${esc(s.tag)}</span><h1>${esc(s.name)}</h1></section>`));
+  const m = $(`<section class="modes"></section>`);
+  const p = $(`<button class="mode"><strong>${T.play}</strong><small>${T.playSub}</small>${starsHtml(store.best[s.id]||0)}</button>`); p.onclick=()=>startQuiz(s.id);
+  const c = $(`<button class="mode"><strong>${T.cards}</strong><small>${T.cardsSub}</small><small>${s.cards.length} ${s.lang==="es"?"tarjetas":"cards"}</small></button>`); c.onclick=()=>go("cards",{sid:s.id,i:0,flip:false,order:shuffle(s.cards.map((_,i)=>i))});
+  m.append(p,c);
+  if(s.dictation){ const d=$(`<button class="mode"><strong>Dictado</strong><small>Escuchá la palabra y escribila.</small>${starsHtml(store.best["dict"]||0)}</button>`); d.onclick=()=>go("dict",{sid:s.id}); m.append(d); }
+  app.append(m);
+}
+
+/* Draw questions: 3 easy, 3 medium, 2 challenge, always shown easy → hard. */
+function draw(pool, n){
+  const by = {f:[],m:[],d:[]}; pool.forEach(q=>by[q.lv].push(q));
+  const want = n===10 ? {f:4,m:3,d:3} : {f:3,m:3,d:2};
+  let out = [];
+  ["f","m","d"].forEach(k=>{ out = out.concat(shuffle(by[k]).slice(0,want[k])); });
+  return out;
+}
+function startQuiz(sid){
+  let qs;
+  if(sid==="mix"){
+    const all = S.flatMap(s=>s.questions.filter(q=>!q.p).map(q=>Object.assign({sid:s.id},q)));
+    qs = draw(all,10);
+  } else {
+    const s = subj(sid); qs = draw(s.questions.map(q=>Object.assign({sid:s.id},q)),8);
+  }
+  go("quiz",{sid,qs,i:0,score:0,streak:0,miss:[]});
+}
+
+function renderQuiz(){
+  const isMix = st.sid==="mix", home = isMix ? null : subj(st.sid);
+  if(st.i >= st.qs.length) return renderEnd();
+  const q = st.qs[st.i], s = subj(q.sid), T = TXT[s.lang];
+  app.style.setProperty("--sc", isMix ? "var(--c-mix)" : COLORS[s.color]);
+  app.append(topBar(isMix?"Inicio":home.name, ()=> isMix ? go("home") : go("subject",{sid:home.id})));
+  app.append($(`<div style="display:flex;flex-direction:column;gap:8px"><div class="qmeta"><span class="pill ${q.lv}">${T.lv[q.lv]}</span>${isMix?`<span>${esc(s.name)}</span>`:""}<span>${st.streak>=2?`<span class="streak">🔥 ${st.streak} ${T.streak}</span> · `:""}${T.q} ${st.i+1} ${T.of} ${st.qs.length}</span></div><div class="prog"><div style="width:${(st.i/st.qs.length)*100}%"></div></div></div>`));
+  const card = $(`<section class="card"></section>`);
+  if(q.p){
+    const P = s.passages[q.p], prev = st.qs[st.i-1];
+    card.append($(`<details class="passage" ${!prev||prev.p!==q.p?"open":""}><summary>${T.read}: ${esc(P.title)}</summary><p>${esc(P.text)}</p>${P.gloss?`<p class="gloss"><strong>${T.help}:</strong> ${esc(P.gloss)}</p>`:""}</details>`));
+  }
+  card.append($(`<p class="q">${esc(q.q)}</p>`));
+  if(q.html) card.append($(q.html));
+  const fbBox = $(`<div></div>`), act = $(`<div class="actions"></div>`);
+  let answered = false;
+  const finish = (ok, ansText)=>{
+    if(answered) return; answered = true;
+    if(ok){ st.score++; st.streak++; } else { st.streak=0; st.miss.push({q:q.q, a:ansText}); }
+    fbBox.replaceChildren($(`<div class="fb ${ok?"ok":"bad"} pop" role="status">${ok?pick(T.ok):pick(T.bad)}${ok?"":`<span class="ans">${T.answer} <strong>${esc(ansText)}</strong></span>`}</div>`));
+    const nx = $(`<button class="primary">${st.i+1>=st.qs.length?T.finish:T.next}</button>`);
+    nx.onclick = ()=>{ st.i++; render(); window.scrollTo({top:0}); };
+    act.replaceChildren(nx); nx.focus();
+  };
+  if(q.t==="mc"||q.t==="tf"){
+    const labels = q.t==="tf" ? (q.labels||[T.t,T.f]) : shuffle(q.o);
+    const isA = (j)=> q.t==="mc" ? labels[j]===q.a : (j===0)===q.a;
+    const box = $(`<div class="${q.t==="tf"?"tf":"opts"}"></div>`);
+    labels.forEach((lab,idx)=>{
+      const b = $(`<button class="opt">${esc(lab)}</button>`);
+      b.onclick = ()=>{ if(answered) return; const ok=isA(idx); b.classList.add(ok?"ok":"bad");
+        box.querySelectorAll(".opt").forEach((o,j)=>{ o.disabled=true; if(isA(j)) o.classList.add("ok"); });
+        finish(ok, q.t==="mc"?q.a:labels[q.a?0:1]); };
+      box.append(b);
+    });
+    card.append(box);
+  } else if(q.t==="fill"){
+    const inp = $(`<input class="fill" id="fill-${st.i}" autocomplete="off" autocapitalize="off" spellcheck="false" ${q.num?'inputmode="numeric"':""} placeholder="${T.typeHere}">`);
+    card.append(inp);
+    const run = ()=>{ if(answered||!inp.value.trim()) return; let ok;
+      if(q.num) ok = q.a.includes(inp.value.replace(/[^\d]/g,""));
+      else { const v=norm(inp.value); ok = q.a.some(a=>norm(a)===v||deacc(norm(a))===deacc(v)); }
+      inp.disabled=true; inp.style.borderColor=ok?"var(--ok)":"var(--bad)";
+      finish(ok, q.num?Number(q.a[0]).toLocaleString("es-PY"):q.a.join(" / ")); };
+    const chk = $(`<button class="primary">${T.check}</button>`); chk.onclick=run; inp.onkeydown=(e)=>{ if(e.key==="Enter") run(); };
+    act.append(chk); setTimeout(()=>inp.focus(),50);
+  } else if(q.t==="match"){
+    const rights = shuffle([...new Set(q.pairs.map(p=>p[1]))]); const sels=[];
+    q.pairs.forEach(([l],idx)=>{ const row=$(`<div class="mrow"><span>${esc(l)}</span><select id="m-${st.i}-${idx}" aria-label="${esc(l)}"><option value="">${T.choose}</option>${rights.map(r=>`<option>${esc(r)}</option>`).join("")}</select></div>`); sels.push(row.querySelector("select")); card.append(row); });
+    const chk = $(`<button class="primary">${T.check}</button>`);
+    chk.onclick = ()=>{ if(answered||sels.some(x=>!x.value)) return; let all=true;
+      sels.forEach((x,idx)=>{ const ok=x.value===q.pairs[idx][1]; x.classList.add(ok?"ok":"bad"); x.disabled=true; if(!ok) all=false; });
+      finish(all, q.pairs.map(p=>p[0]+" → "+p[1]).join(" · ")); };
+    act.append(chk);
+  } else if(q.t==="order"){
+    let cur = shuffle(q.items), g=0; while(cur.join()===q.items.join() && g++<10) cur=shuffle(q.items);
+    card.append($(`<p class="note">${T.orderHint}</p>`));
+    const list = $(`<div class="olist"></div>`);
+    const drawL = (lock)=>{ list.replaceChildren(); cur.forEach((it,idx)=>{
+      const row=$(`<div class="oitem"><span class="num">${idx+1}</span><span>${esc(it)}</span><button aria-label="${T.up}" ${idx===0||lock?"disabled":""}>▲</button><button aria-label="${T.down}" ${idx===cur.length-1||lock?"disabled":""}>▼</button></div>`);
+      const [u,d]=row.querySelectorAll("button");
+      u.onclick=()=>{[cur[idx-1],cur[idx]]=[cur[idx],cur[idx-1]];drawL();}; d.onclick=()=>{[cur[idx+1],cur[idx]]=[cur[idx],cur[idx+1]];drawL();};
+      if(lock) row.classList.add(it===q.items[idx]?"ok":"bad"); list.append(row); }); };
+    drawL(); card.append(list);
+    const chk = $(`<button class="primary">${T.check}</button>`);
+    chk.onclick=()=>{ if(answered) return; drawL(true); finish(cur.join("|")===q.items.join("|"), q.items.map((x,i)=>(i+1)+". "+x).join("  ")); };
+    act.append(chk);
+  }
+  card.append(fbBox, act); app.append(card);
+}
+
+function renderEnd(){
+  const isMix = st.sid==="mix", s = isMix?null:subj(st.sid), T = TXT[isMix?"es":s.lang], total = st.qs.length;
+  app.style.setProperty("--sc", isMix?"var(--c-mix)":COLORS[s.color]);
+  app.append(topBar(isMix?"Inicio":s.name, ()=> isMix?go("home"):go("subject",{sid:s.id})));
+  const pct = st.score/total, stars = pct>=0.9?3:pct>=0.7?2:1;
+  if(stars > (store.best[st.sid]||0)){ store.best[st.sid]=stars; save(); }
+  const c = $(`<section class="card end"><div class="bigstars">${[0,1,2].map(i=>i<stars?"<b>★</b>":"★").join("")}</div><h2>${st.score} / ${total}</h2><p>${stars===3?T.end3:stars===2?T.end2:T.end1}</p><div class="actions"></div></section>`);
+  const a=$(`<button class="primary">${T.again}</button>`); a.onclick=()=>startQuiz(st.sid);
+  const b=$(`<button class="ghost">${T.back}</button>`); b.onclick=()=> isMix?go("home"):go("subject",{sid:s.id});
+  c.querySelector(".actions").append(a,b);
+  if(st.miss.length){ const r=$(`<div class="review"><h3>${T.review}</h3><ul>${st.miss.map(m=>`<li>${esc(m.q)} → <strong>${esc(m.a)}</strong></li>`).join("")}</ul></div>`); c.append(r); }
+  app.append(c);
+}
+
+function renderCards(){
+  const s = subj(st.sid), T = TXT[s.lang];
+  app.style.setProperty("--sc", COLORS[s.color]);
+  app.append(topBar(s.name, ()=>go("subject",{sid:s.id})));
+  const [front, back] = s.cards[st.order[st.i]];
+  const c = $(`<section class="card" style="align-items:center"><div class="qmeta" style="width:100%"><span>${T.cards}</span><span>${st.i+1} ${T.of} ${s.cards.length}</span></div>
+    <button class="fcard" aria-live="polite">${st.flip?`<span class="backside">${esc(back)}</span><small>${esc(front)}</small>`:`<span class="front">${esc(front)}</span><small>${T.tap}</small>`}</button>
+    <div class="actions"><button class="ghost" ${st.i===0?"disabled":""}>← ${T.prev}</button><button class="primary">${T.flip}</button><button class="ghost" ${st.i===s.cards.length-1?"disabled":""}>${T.nxt} →</button></div></section>`);
+  const flip = ()=>{ st.flip=!st.flip; render(); };
+  c.querySelector(".fcard").onclick = flip;
+  const [pv,fl,nx] = c.querySelectorAll(".actions button");
+  fl.onclick = flip; pv.onclick=()=>{ st.i--; st.flip=false; render(); }; nx.onclick=()=>{ st.i++; st.flip=false; render(); };
+  app.append(c);
+}
+
+function speak(w){ try{ if(!("speechSynthesis" in window)) return; const u=new SpeechSynthesisUtterance(w); const v=speechSynthesis.getVoices().find(v=>/^es/i.test(v.lang)); u.lang=v?v.lang:"es-ES"; if(v) u.voice=v; u.rate=0.75; speechSynthesis.cancel(); speechSynthesis.speak(u);}catch(e){} }
+try{ if("speechSynthesis" in window) speechSynthesis.getVoices(); }catch(e){}
+
+function renderDict(){
+  const s = subj("com"), T = TXT.es, D = BANK.dictation;
+  app.style.setProperty("--sc", COLORS[s.color]);
+  app.append(topBar("Comunicación", ()=>go("subject",{sid:"com"})));
+  if(!st.list){
+    const c=$(`<section class="card"><span class="label">Ortografía</span><h2>Dictado</h2><p>Elegí qué letras practicar. Vas a escuchar 10 palabras.</p><div class="dchips"></div><p class="note">Si el audio no suena, un adulto puede tocar “Ver la palabra” y dictarla.</p></section>`);
+    [...Object.keys(D),"Mezcla"].forEach(k=>{ const b=$(`<button class="dchip">${k==="Mezcla"?"Mezcla":"Con "+k}</button>`);
+      b.onclick=()=>{ st.list = k==="Mezcla"?shuffle(Object.values(D).flat()).slice(0,10):shuffle(D[k]); st.k=k; st.i=0; st.score=0; render(); };
+      c.querySelector(".dchips").append(b); });
+    app.append(c); return;
+  }
+  const w = st.list;
+  if(st.i>=w.length){
+    const pct=st.score/w.length, stars=pct>=0.9?3:pct>=0.7?2:1;
+    if(stars>(store.best["dict"]||0)){ store.best["dict"]=stars; save(); }
+    const c=$(`<section class="card end"><div class="bigstars">${[0,1,2].map(i=>i<stars?"<b>★</b>":"★").join("")}</div><h2>${st.score} / ${w.length}</h2><p>${stars===3?T.end3:stars===2?T.end2:"¡Buen comienzo! Probá otra vez."}</p><div class="actions"></div></section>`);
+    const a=$(`<button class="primary">Otro dictado</button>`); a.onclick=()=>go("dict",{sid:"com"}); c.querySelector(".actions").append(a); app.append(c); return;
+  }
+  const word = w[st.i];
+  app.append($(`<div style="display:flex;flex-direction:column;gap:8px"><div class="qmeta"><span>Dictado · ${st.k==="Mezcla"?"Mezcla":"Con "+st.k}</span><span>Palabra ${st.i+1} de ${w.length}</span></div><div class="prog"><div style="width:${(st.i/w.length)*100}%"></div></div></div>`));
+  const c=$(`<section class="card"></section>`);
+  const sp=$(`<button class="speak">▶ Escuchar la palabra</button>`); sp.onclick=()=>speak(word);
+  const rv=$(`<button class="reveal">Ver la palabra (para el adulto que dicta)</button>`), shown=$(`<p class="word" hidden>${esc(word)}</p>`); rv.onclick=()=>{ shown.hidden=!shown.hidden; };
+  const inp=$(`<input class="fill" id="dict-${st.i}" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Escribí la palabra">`);
+  const fb=$(`<div></div>`), act=$(`<div class="actions"></div>`), chk=$(`<button class="primary">Comprobar</button>`); let done=false;
+  const run=()=>{ if(done||!inp.value.trim()) return; done=true; const v=inp.value.trim().toLowerCase(); let cls,txt;
+    if(v===word){ st.score++; cls="ok"; txt=pick(T.ok); } else if(deacc(v)===deacc(word)){ st.score+=0.5; cls="bad"; txt=`¡Casi! Revisá la tilde: <strong>${esc(word)}</strong>`; } else { cls="bad"; txt=`${pick(T.bad)} <span class="ans">Se escribe: <strong>${esc(word)}</strong></span>`; }
+    inp.disabled=true; inp.style.borderColor=cls==="ok"?"var(--ok)":"var(--bad)";
+    fb.replaceChildren($(`<div class="fb ${cls} pop" role="status">${txt}</div>`));
+    const nx=$(`<button class="primary">${st.i+1>=w.length?"Ver resultado":"Siguiente palabra"}</button>`); nx.onclick=()=>{ st.i++; render(); }; act.replaceChildren(nx); nx.focus(); };
+  chk.onclick=run; inp.onkeydown=(e)=>{ if(e.key==="Enter") run(); }; act.append(chk);
+  c.append(sp,rv,shown,inp,fb,act); app.append(c); setTimeout(()=>inp.focus(),50);
+}
+
+render();
+</script>

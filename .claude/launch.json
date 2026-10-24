@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "repaso", "runtimeExecutable": "node", "runtimeArgs": ["scripts/serve.mjs", "8806"], "port": 8806 }
+  ]
+}
