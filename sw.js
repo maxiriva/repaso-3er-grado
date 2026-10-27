@@ -1,6 +1,6 @@
 /* Service worker: guarda el sitio para usarlo sin internet después de la primera visita.
    Cambiá VERSION en cada deploy para que los equipos bajen la versión nueva. */
-const VERSION = "repaso3-2026-10-24-2";
+const VERSION = "repaso3-2026-10-27-1";
 const SHELL = ["./", "index.html", "app.js", "styles.css", "banco.json", "manifest.webmanifest", "fonts/fonts.css",
   "fonts/baloo2-latin.woff2", "fonts/baloo2-latin-ext.woff2", "fonts/baloo2-vietnamese.woff2",
   "fonts/nunito-latin.woff2", "fonts/nunito-latin-ext.woff2", "fonts/nunito-vietnamese.woff2",

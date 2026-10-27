@@ -2,7 +2,7 @@
 
 Juego de repaso para 3er grado: Comunicación, Guaraní, Matemática, Vida Social y Trabajo, Language Arts, Science and Health y Social Studies. Tiene partidas de 8 preguntas, desafío relámpago, y tarjetas.
 
-La guía para padres está en [`padres.html`](padres.html) (también se abre desde el sitio).
+La guía para padres está en [`padres.html`](padres.html) (también se abre desde el sitio) y ofrece un repaso imprimible por materia (`repasos/repaso-*.pdf`), cada uno con sus respuestas en la última página. Se generan con `npm run repasos` a partir del cuadernillo original (`repasos/fuente/`) y de `repasos/respuestas.mjs`; si cambia alguno de los dos, volver a generarlos.
 
 ## Cómo se guarda el avance
 

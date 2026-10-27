@@ -44,6 +44,7 @@ jobs:
       - run: |
           mkdir _site
           cp -r index.html app.js styles.css banco.json manifest.webmanifest sw.js padres.html fonts icons _site/
+          mkdir _site/repasos && cp repasos/repaso-*.pdf _site/repasos/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
       - id: pages

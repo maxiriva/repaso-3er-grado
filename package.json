@@ -9,10 +9,12 @@
     "validate": "node scripts/validate-bank.mjs",
     "test": "playwright test",
     "icons": "node scripts/make-icons.mjs",
-    "qr": "node scripts/make-qr.mjs"
+    "qr": "node scripts/make-qr.mjs",
+    "repasos": "node scripts/build-repasos.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.56.1",
+    "pdf-lib": "^1.17.1",
     "qrcode": "1.5.4"
   }
 }

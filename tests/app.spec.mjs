@@ -223,3 +223,16 @@ test("funciona sin conexión después de la primera visita", async ({ page, cont
   await playRound(page, 10);
   await context.setOffline(false);
 });
+
+test("la guía para padres ofrece un repaso imprimible por materia", async ({ page, request }) => {
+  await page.goto("./padres.html");
+  const links = page.locator(".dl a");
+  await expect(links).toHaveCount(7);
+  for (const href of await links.evaluateAll((as) => as.map((a) => a.getAttribute("href")))) {
+    const res = await request.get(new URL(href, page.url()).href);
+    expect(res.status(), href).toBe(200);
+    expect(res.headers()["content-type"]).toContain("application/pdf");
+    expect((await res.body()).subarray(0, 4).toString()).toBe("%PDF");
+  }
+  await expect(page.locator("a[href*='fuente']")).toHaveCount(0);
+});

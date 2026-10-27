@@ -181,3 +181,5 @@ textarea.code{font-family:ui-monospace,Menlo,monospace;font-size:.85rem;word-bre
 @media print{body{background:#fff}.top,.actions,.toast{display:none}.card{border:none}}
 @media (prefers-reduced-motion:reduce){.big-ava,.mascot .head,.dot.now{animation:none}}
 .rrow .rbar,.rrow .rbar .prog{display:block}
+.dl{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-weight:800}
+.dl a{color:var(--c-mat)}
